@@ -1,0 +1,34 @@
+Source: siduction-scripts
+Section: misc
+Priority: extra
+Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+ Ferdinand Thommes <devil@siduction.org>
+Uploaders: Kel Modderman <kel@otaku42.de>,
+ Joaquim Boura <x-un-i@berlios.de>
+ Ferdinand Thommes <devil@siduction.org>
+Build-Depends: debhelper (>= 8),
+ libconfig-tiny-perl
+Standards-Version: 3.9.2
+Vcs-Svn:
+Vcs-Browser: http://git.siduction.org/?p=packages/siduction-repository/siduction-scripts.git;a=summary
+
+Package: siduction-scripts
+Architecture: all
+Depends: ${misc:Depends},
+ perl,
+ distro-defaults,
+ wodim
+Recommends: menu,
+ ntpdate
+Description: miscellaneous scripts for siduction
+ Script collection for live and install uses on siduction:
+  * burniso (write an ISO image from cli)
+  * fix-dpi-kdm (tweak dpi settings for kdm/ KDE)
+  * fix-ssh (generate ssh host keys, which are missing on the live system)
+  * fix-time (configure timezone and sync time via ntp)
+  * fw-detect (identify missing firmware for installed hardware)
+  * get-resume-partition (configure a resume (swap) partition based on UUIDs)
+  * inetconn (check if an internet connection is active)
+  * remove-gateway (remove configured gateways from /etc/network/interfaces)
+  * remove-orphans (purge files which were merely removed)
+  *  siduction-paste/ wgetpaste (paste cli output to a pastebin)

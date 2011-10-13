@@ -1,0 +1,838 @@
+aptosid-scripts (0.4.14) UNRELEASED; urgency=low
+
+  -- Ferdinand Thommes <devil@siduction.org> Thur,13 Oct 2011 23:40:43 +0200
+  * adapted aptosid-scripts for siduction
+
+  * NOT RELEASED YET
+  * update firmware db:
+    - Realtek 8192C/8188C 802.11n PCI wireless
+    - Realtek 8192S/8191S 802.11n PCI wireless
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Jul 2011 19:38:25 +0200
+
+aptosid-scripts (0.4.13) unstable; urgency=low
+
+  * bump standards version to 3.9.2, no changes necessary.
+  * update eMail addresses.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Apr 2011 03:57:09 +0200
+
+aptosid-scripts (0.4.12) unstable; urgency=low
+
+  * set default paste service to pocoo, currently the only one supporting
+    pastes >64Kb 
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Fri, 11 Mar 2011 21:23:37 +0100
+
+aptosid-scripts (0.4.11) unstable; urgency=low
+
+  * drop transitional meta package.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 21 Jan 2011 13:45:51 +0100
+
+aptosid-scripts (0.4.10) unstable; urgency=low
+
+  * update firmware db:
+    - Atheros AR7010
+    - Realtek RTL8111D(L)
+    - Realtek RTL8188S 150/ RTL8191S 300 MBit/s USB WiFi cards (r8712u)
+    - disambiguate Broadcom b43 and b43legacy, firmware-b43-lpphy-installer is
+      now preferred for all non-legacy chipsets with ucode > 10.
+    - Broadcom 802.11n wireless LAN driver brcm80211.
+    - Atheros AR30xx Bluetooth chipset
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 26 Dec 2010 18:08:57 +0100
+
+aptosid-scripts (0.4.9) unstable; urgency=low
+
+  * fixed empty value for wodim option making the script unusable
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Mon, 08 Nov 2010 18:01:52 +0100
+
+aptosid-scripts (0.4.8) unstable; urgency=low
+
+  * fix hjt's mail address.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 15:33:39 +0200
+
+aptosid-scripts (0.4.7) unstable; urgency=low
+
+  * fix x-un-i's mail address.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 14:36:04 +0200
+
+aptosid-scripts (0.4.6) unstable; urgency=low
+
+  * Fix typo (s/CUSTOM_DPI/DPI/) in fix-dpi-kdm script. Thanks to
+    "seagull" on the forum for reporting it broken.
+  * Remove grub menu.lst reference from get-resume-partition.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 21 Sep 2010 17:57:46 +1000
+
+aptosid-scripts (0.4.5) unstable; urgency=low
+
+  * New upstream version for wgetpaste. going back to pastebin.
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Sat, 18 Sep 2010 00:03:58 +0200
+
+aptosid-scripts (0.4.4) unstable; urgency=low
+
+  * adapt URLs to download firmware images from git.kernel.org.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 17 Sep 2010 18:50:12 +0200
+
+aptosid-scripts (0.4.3) unstable; urgency=low
+
+  * s/802.11/IEEE802.11/
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Sep 2010 22:48:35 +0200
+
+aptosid-scripts (0.4.2) unstable; urgency=low
+
+  * add id tags for firmware captions.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 10 Sep 2010 21:59:31 +0200
+
+aptosid-scripts (0.4.1) unstable; urgency=low
+
+  * add proper takeover support
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 29 Aug 2010 04:29:29 +0200
+
+aptosid-scripts (0.4.0) unstable; urgency=low
+
+  * rename to aptosid.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 29 Aug 2010 04:24:33 +0200
+
+sidux-scripts (0.3.12) unstable; urgency=low
+
+  * switch to compat level 8.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Aug 2010 05:22:40 +0200
+
+sidux-scripts (0.3.11) unstable; urgency=low
+
+  * bump standards version to 3.9.1, no changes necessary.
+  * elaborate long description a bit further, to make lintian happy.
+  * make lintian happy about hyphen-used-as-minus-sign.
+  * fix syntax errors in fw-detect.1
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 04 Aug 2010 04:35:01 +0200
+
+sidux-scripts (0.3.10) unstable; urgency=low
+
+  * update firmware db:
+    - Afatech AF9015 DVB-T
+    - Atheros AR9170 802.11n USB wireless
+    - Atheros AR9271 802.11n-lite USB wireless
+    - Realtek RTL8188S 150/ RTL8191S 300 MBit/s USB WiFi cards
+    - Realtek RTL8192E 150/ 300 MBit/s PCI WiFi cards
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 26 May 2010 18:55:46 +0200
+
+sidux-scripts (0.3.9) unstable; urgency=low
+
+  [ Joaquim Boura ]
+  * changed default service zu dpaste
+
+  [ Stefan Lippers-Hollmann ]
+  * Switch to dpkg-source 3.0 (native) format.
+  * bump standards version to 3.8.4, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 24 Mar 2010 00:30:11 +0100
+
+sidux-scripts (0.3.8) unstable; urgency=low
+
+  [ Stefan Lippers-Hollmann ]
+  * fix firmware locations.
+
+  [ Joaquim Boura ]
+  * fixed URL for ESS Allegro
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Sat, 02 Jan 2010 13:05:43 +0100
+
+sidux-scripts (0.3.7) unstable; urgency=low
+
+  * new upstream version from wgetpaste.
+    Some more paste services were added.
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 27 Dec 2009 12:22:28 +0100
+
+sidux-scripts (0.3.6) unstable; urgency=low
+
+  * fw-data.ini:
+    - drop ACX100, it's broken for ages.
+    - add Afatech AF9015 DVB-T.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 11 Nov 2009 00:21:48 +0100
+
+sidux-scripts (0.3.5) unstable; urgency=low
+
+  * update to firmware-linux-free vs. firmware-linux-nonfree.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Oct 2009 22:26:40 +0100
+
+sidux-scripts (0.3.4) unstable; urgency=low
+
+  [ Joaquim Boura ]
+  * it translation for the notes (thks alessiog75)
+  * el translation for the notes (thks edhunter)
+
+  [ Stefan Lippers-Hollmann ]
+  * fix Broadcom Blutonium description.
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 27 Oct 2009 17:43:57 +0100
+
+sidux-scripts (0.3.3) unstable; urgency=low
+
+  [ Niall Walsh ]
+  * fw-detect:
+    - rewrite firmware_ok (thanks DonKult)
+    - more ini updates (thanks DonKult)
+  * fw-data-convert:
+    - fix quoting on FW_CARDS_FW_DEV_STR
+    - drop file field from output
+    - stop duplicating fw and url
+  * fw: use the right index to FW_CARDS_FW when not SHORT in sys_detect
+
+  [ Joaquim Boura ]
+  * do not run sys_detect on -h or unknown option
+
+  [ Stefan Lippers-Hollmann ]
+  * s/h3/strong/.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 24 Oct 2009 22:34:18 +0200
+
+sidux-scripts (0.3.2) unstable; urgency=low
+
+  * Add a basic manpage and -h option to fw-detect
+  * Fix typo of missing second _FW in FW_CARDS_FW_DEV_*
+
+ -- Niall Walsh <niallwalsh@users.berlios.de>  Fri, 23 Oct 2009 19:19:22 +0100
+
+sidux-scripts (0.3.1) unstable; urgency=low
+
+  [ Niall Walsh ]
+  * fw-data.ini
+    - Finish populating an initial set of the fw-data.ini class fields
+    - Remove "network adapters" from netXtremeII
+    - Add sample of note translation
+    - fix usb class, add some missing, ensure all are in another class
+    - change v4l to webcam
+    - get the word "support" out of titles
+
+  [ Stefan Lippers-Hollmann ]
+  * translate notes to german.
+  * add cs46xx.
+  * add cxgb3.
+  * add af9005.
+
+ -- Niall Walsh <niallwalsh@users.berlios.de>  Wed, 21 Oct 2009 20:56:20 +0100
+
+sidux-scripts (0.3.0) unstable; urgency=low
+
+  [ Niall Walsh ]
+  * Overhaul fw-detect.
+    - Split out most of the logic to /usr/share/sidux-scripts/fw
+    - Split out the data into /usr/share/sidux-scripts/fw-data
+    - Edit the data via an ini file in the source packaging
+  * Update data to 2009-02 Release notes
+
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 3.8.3, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 16 Oct 2009 23:16:54 +0200
+
+sidux-scripts (0.2.27) unstable; urgency=low
+
+  * drop KDE3 compatibility, make dpi changes more robust.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 08 Jul 2009 21:21:58 +0200
+
+sidux-scripts (0.2.26) unstable; urgency=low
+
+  [ Michael Deelwater ]
+  * Remove noforcespeed option. Does only cause problems.
+
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 3.8.2, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 29 Jun 2009 14:22:34 +0200
+
+sidux-scripts (0.2.25) unstable; urgency=low
+
+  * bump standards version to 3.8.1, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 28 May 2009 01:09:32 +0200
+
+sidux-scripts (0.2.24) unstable; urgency=low
+
+  * new upstream version from wgetpaste.
+    Set default past service to pastbin.ca as rafb.net is dead.
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 27 May 2009 23:54:49 +0200
+
+sidux-scripts (0.2.23) unstable; urgency=low
+
+  [ Joaquim Boura ]
+  * kdm has now his config in /etc/kde4
+
+  [ Stefan Lippers-Hollmann ]
+  * adapt fix-kdm-dpi for kde4, general overhaul.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 13 Apr 2009 13:44:44 +0200
+
+sidux-scripts (0.2.22) unstable; urgency=low
+
+  * Add burniso script and manpage.
+  * Update debian/copyright for burniso.
+  * debian/manpages:
+    - Newly created for burniso.
+  * debian/control:
+    - Add wodim to Depends.
+  * Fix language in manpage. Thanks bluewater!
+
+ -- Michael Deelwater <michael.deelwater@googlemail.com>  Tue, 17 Feb 2009 00:04:36 +0100
+
+sidux-scripts (0.2.21) unstable; urgency=low
+
+  * added missing hints for firmware found in the kernel git tree
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Thu, 18 Dec 2008 21:01:36 +0100
+
+sidux-scripts (0.2.20) unstable; urgency=low
+
+  * fix syntax of fw-detect.
+  * make lintian happy and depend on ${misc:Depends}.
+  * drop useless Conflicts with ancient configure-networkcard.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Dec 2008 01:52:35 +0100
+
+sidux-scripts (0.2.19) unstable; urgency=low
+
+  [ Stefan Lippers-Hollmann ]
+  * s/ipw2?00-firmware/firmware-ipw2x00/g for fwdetect.
+  * drop special handling for Atheros hardware, ath5k and ath9k handle all
+    devices previously covered by madwifi.
+  * add hints for:
+    - Korg 1212 IO audio device
+    - ESS Allegro Maestro3 audio device
+    - Yamaha YMF724/740/744/754 audio devices
+    - SMC ISA/MCA Token Ring adapter
+    - USB KLSI KL5USB101-based Ethernet device
+
+  [ Joaquim Boura ]
+  * add hints for:
+    - CPiA2 -- cameras based on Vision's CPiA2
+    - DABUSB -- Digital Audio Broadcasting (DAB) Receiver for USB and Linux
+    - USB TI 3410/5052 serial device
+    - EMI 2|6 USB Audio interface
+    - EMI 6|2m USB Audio interface
+    - USB Keyspan USA-xxx serial device
+    - USB Keyspan PDA single-port serial device
+    - Computone IntelliPort Plus serial device
+    - USB 3com HomeConnect (aka vicam)
+    - USB ConnectTech WhiteHEAT serial device
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 07 Dec 2008 19:03:09 +0100
+
+sidux-scripts (0.2.18) unstable; urgency=low
+
+  * neither bcm43xx nor bcm43xx-fwcutter exist anymore.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 16 Nov 2008 00:27:06 +0100
+
+sidux-scripts (0.2.17) unstable; urgency=low
+
+  * fw-detect: add iwlagn
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 14 Oct 2008 23:48:51 +1000
+
+sidux-scripts (0.2.16) unstable; urgency=low
+
+  * fw-detect: do not bother detecting atheros hardware if ath5k|ath9k
+    is present, they will have claimed the device already.
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 20 Sep 2008 07:24:44 +1000
+
+sidux-scripts (0.2.15) unstable; urgency=low
+
+  * fw-detect:
+    - apply patch from ModestUser improving DVB related output
+    - remove dead code from atheros pci section
+  * Remove fix-5b-mouse, get-sidux-binary-gfx and sidux-apt-config; they
+    are unmaintained and buggy.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 04 Jul 2008 15:02:30 +1000
+
+sidux-scripts (0.2.14) unstable; urgency=low
+
+  * sgxfi is infringing the GPL and proprietary vendor licenses, it has no
+    business in sidux.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 06 Jun 2008 10:28:15 +0200
+
+sidux-scripts (0.2.13) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * fw-detect:
+    - apply patch from ModestUser adding detection for various DVB firmware
+    - use /sys/modules/* and not the deeper /sys/bus/*/drivers/*
+    - fix ugly coding style of case constructs
+
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 3.8.0, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 06 Jun 2008 00:23:35 +0200
+
+sidux-scripts (0.2.12) unstable; urgency=low
+
+  * switch to the new dh implementation of debhelper 7.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 07 May 2008 02:26:04 +0200
+
+sidux-scripts (0.2.11) unstable; urgency=low
+
+  * wgetpaste uptaded to version 2.10
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 09 Apr 2008 13:53:01 +0200
+
+sidux-scripts (0.2.10) unstable; urgency=low
+
+  * fw-detect: atheros install updated
+
+ -- Fabian Wuertz <xadras@users.berlios.de>  Sun, 23 Mar 2008 22:37:56 +0100
+
+sidux-scripts (0.2.9) unstable; urgency=low
+
+  * New upstream version (2.9). Script renamed to wgetpaste
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 11 Mar 2008 11:32:07 +0100
+
+sidux-scripts (0.2.8) unstable; urgency=low
+
+  * appease lintian and write (C) as © in debian/copyright.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 21 Feb 2008 01:16:41 +0100
+
+sidux-scripts (0.2.7) unstable; urgency=low
+
+  * inetconn updated
+
+ -- Horst Tritremmel <hjt@users.berlios.de>  Wed, 06 Feb 2008 12:39:38 +0100
+
+sidux-scripts (0.2.6) unstable; urgency=low
+
+  * SSFT_FRONTEND check in fw-detect disabled
+  * option y=installable drivers added
+  * debian/install fixed
+
+ -- Horst Tritremmel <hjt@users.berlios.de>  Mon, 04 Feb 2008 22:07:31 +0100
+
+sidux-scripts (0.2.5) unstable; urgency=low
+
+  * internet connect checkscript "inetconn" added
+
+ -- Horst Tritremmel <hjt@users.berlios.de>  Thu, 31 Jan 2008 16:56:58 +0100
+
+sidux-scripts (0.2.4) unstable; urgency=low
+
+  * s/echo/ssft/ in fw-detect
+
+ -- Horst Tritremmel <hjt@users.berlios.de>  Tue, 29 Jan 2008 20:49:06 +0100
+
+sidux-scripts (0.2.3) unstable; urgency=low
+
+  * Use full path to modinfo, it may not be in user $PATH.
+
+ -- Kel Modderman <kel@otaku42.de>  Thu, 24 Jan 2008 10:37:54 +1000
+
+sidux-scripts (0.2.2) unstable; urgency=low
+
+  * fw-detect modified for siduxcc
+
+ -- Fabian Wuertz <xadras@users.berlios.de>  Tue, 22 Jan 2008 21:27:49 +0100
+
+sidux-scripts (0.2.1) unstable; urgency=low
+
+  * update to debhelper compat 6.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 19 Jan 2008 02:40:56 +0100
+
+sidux-scripts (0.2.0) unstable; urgency=low
+
+  * ship fw-detect as part of sidux-scripts.
+  * add fw-detect to debian/copyright.
+  * clean up/ re- indent debian/copyright.
+  * remove bogus dependency on udev.
+  * remove dead masquerade script.
+  * switch from custom su-me to generic su-to-root, adapt dependencies and
+    menu files accordingly.
+  * general clean up.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Jan 2008 13:53:34 +0100
+
+sidux-scripts (0.1.45) unstable; urgency=low
+
+  * get-resume-partition: also hack /etc/uswsusp.conf if present, when
+    updating resume partition to use a UUID.
+
+ -- Kel Modderman <kel@otaku42.de>  Mon, 07 Jan 2008 15:51:13 +1000
+
+sidux-scripts (0.1.44) unstable; urgency=low
+
+  * tell the user about du-fixes-h2.sh and sm being replaced by smxi.
+  * enforce using smxi, after showing the warning.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 13 Dec 2007 00:24:03 +0100
+
+sidux-scripts (0.1.43) unstable; urgency=low
+
+  * get-resume-partition: announce change at the end of script.
+  * Make message when no swap is on system less scary.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 07 Dec 2007 08:38:17 +1000
+
+sidux-scripts (0.1.42) unstable; urgency=low
+
+  * Add svmi link to smxi.
+
+ -- Kel Modderman <kel@otaku42.de>  Wed, 05 Dec 2007 09:28:29 +1000
+
+sidux-scripts (0.1.41) unstable; urgency=low
+
+  * Prompt for password in get-resume-partition.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 04 Dec 2007 23:38:42 +1000
+
+
+sidux-scripts (0.1.40) unstable; urgency=low
+
+  * remove fix-5b-mouse for the time being, as is it doesn't play well with
+    current X.org versions.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 04 Dec 2007 14:38:30 +0100
+
+sidux-scripts (0.1.39) unstable; urgency=low
+
+  [ Stefan Lippers-Hollmann ]
+  * update to Standards-Version 3.7.3, no changes necessary.
+
+  [ Kel Modderman ]
+  * get-resume-partition: validate existing configuration before updating.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 04 Dec 2007 16:19:55 +1000
+
+sidux-scripts (0.1.38) unstable; urgency=low
+
+  * set all shipped scripts executable.
+  * remove exec flags from dead scripts.
+  * don't ship masquerade any longer, hardcoded interface names and no
+    security just don't make any sense.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Nov 2007 16:05:57 +0100
+
+sidux-scripts (0.1.37) unstable; urgency=low
+
+  * nuke $DEBMM handling.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 20 Nov 2007 00:58:41 +0100
+
+sidux-scripts (0.1.36) unstable; urgency=low
+
+  * import new smxi downloader stub from h2.
+  * add trap handling on user abort.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 01 Nov 2007 22:55:50 +0100
+
+sidux-scripts (0.1.35) unstable; urgency=low
+
+  * import h2's new download stub.
+  * quote basename's output.
+  * fix dangerous tempfile handling.
+  * further quoting fixes.
+  * POSIX compatibility is a low hanging fruit, do it.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 26 Oct 2007 21:56:11 +0200
+
+sidux-scripts (0.1.34) unstable; urgency=low
+
+  [ Stefan Lippers-Hollmann ]
+  * update syntax for Vcs headers in debian/control
+
+  [ Joaquim Boura ]
+  * new script sidux-paste using wgetpaste ( found in gentoo)
+  * fixed name + place
+
+  [ Kel Modderman ]
+  * Update get-resume-partition to something that works, see discussion:
+    http://sidux.com/PNphpBB2-viewtopic-t-5332.html
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 23 Oct 2007 23:30:59 +1000
+
+sidux-scripts (0.1.33) unstable; urgency=low
+
+  * add VCS control headers.
+  * remove old cruft:
+    - wep-key.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 18 Sep 2007 09:58:37 +0200
+
+sidux-scripts (0.1.32) unstable; urgency=low
+
+  * get-sidux-binary-gfx enhanced. Autorun Option added.
+
+ -- Andreas Weber <andreas@it-weber.com>  Wed, 22 Aug 2007 21:58:36 +0200
+
+sidux-scripts (0.1.31) unstable; urgency=low
+
+  * get-sidux-binary-gfx user info fixed
+
+ -- webera <andreas@it-weber.com>  Tue, 21 Aug 2007 22:06:31 +0200
+
+sidux-scripts (0.1.30) unstable; urgency=low
+
+  * rename /usr/sbin/sm to /usr/sbin/smxi and do asssorted clean up.
+  * overhaul get-resume-partition:
+    - remove bogus perl dependency
+    - switch to UUIDs
+    - proper escaping
+  * drop bogus dependency on dh-make.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 19 Jul 2007 13:01:42 +0200
+
+sidux-scripts (0.1.29) unstable; urgency=low
+
+  * remove bad options from wget. Thks Snubbelfot
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 27 Jun 2007 22:05:02 +0200
+
+sidux-scripts (0.1.28) unstable; urgency=low
+
+  * new stub from h2 to reflect name change
+  * stub renamed to sm created links to sgfxi and du-fixes-h2.sh
+  * also needed to fix name change in the install file
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Mon, 25 Jun 2007 20:18:58 +0200
+
+sidux-scripts (0.1.27) unstable; urgency=low
+
+  * remove obsolete scripts.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Jun 2007 16:07:35 +0200
+
+sidux-scripts (0.1.26) unstable; urgency=low
+
+  * /var/run/kdm/kdmrc  must also be changed otherwise user must go over init
+    3/init 5 wigwam
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Wed, 23 May 2007 22:48:31 +0200
+
+sidux-scripts (0.1.25) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Update h2's du-fixes stub. It now identifies sgfxi as a "caller" and
+    downloads/executes sgfxi immediately.
+  * Add symlink /usr/sbin/sgfxi -> /usr/sbin/du-fixes-h2.sh to actiavte above
+    change.
+  * Update debian/copyright to reflect Harold Hope's and I influence.
+  * Add myself to Uploaders.
+
+  [ Stefan Lippers-Hollmann ]
+  * minor quotation fix.
+  * relative links rule.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 23 May 2007 15:30:55 +0200
+
+sidux-scripts (0.1.24) unstable; urgency=low
+
+  * fix chmodding in du-fixes-h2.sh stub.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 22 May 2007 19:06:35 +0200
+
+sidux-scripts (0.1.23) unstable; urgency=low
+
+  * import fixed du-fixes-h2.sh downloader stub.
+  * minor coding style changes.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 21 May 2007 23:27:30 +0200
+
+sidux-scripts (0.1.22) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Initial import of du-fixes-h2 stub installer.
+  * Add su-me call to du-fixes-h2.
+  * fix-time should not call tzselect, because it is no-op. To really set the
+    timezone call dpkg-reconfigure tzdata.
+
+  [ Stefan Lippers-Hollmann ]
+  * rework du-fixes-h2.sh download/ exec stub.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 20 May 2007 11:40:01 +0200
+
+sidux-scripts (0.1.21) unstable; urgency=low
+
+  * remove fix-unionfs, we don't support the link farming anymore (fix
+    remaining packages not to use it).
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 24 Apr 2007 00:52:45 +0200
+
+sidux-scripts (0.1.20) unstable; urgency=low
+
+  * tzselect finally replaces tzconfig, thanks to cheko for noticing.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 16 Apr 2007 18:39:09 +0200
+
+sidux-scripts (0.1.19) unstable; urgency=low
+
+  [ Stefan Lippers-Hollmann ]
+  * kanotix-scripts was never part of sidux or debian, don't conflict with it.
+
+  [ Andreas Weber ]
+  * sidux-apt-config.pl added.
+  * Usage Printout added to sidux-apt-config.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  1 Mar 2007 19:10:57 +0100
+
+sidux-scripts (0.1.18) unstable; urgency=low
+
+  * fix up fix-time to deal with the current ntpdate in sid and make it
+    actually do something useful.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  2 Feb 2007 01:42:58 +0100
+
+sidux-scripts (0.1.17) unstable; urgency=low
+
+  * merge in new changes.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 24 Jan 2007 10:22:02 +0100
+
+sidux-scripts (0.1.16) unstable; urgency=low
+
+  * install-sidux-binary-gfx renamed to get-sidux-binary-gfx
+  * su-me fixed and autstart of the Script disabled
+  * Comments added and repo changed to sidux.com
+
+ -- Andreas Weber <andreas@it-weber.com>  Wed, 24 Jan 2007 18:51:58 +0100
+
+sidux-scripts (0.1.15) unstable; urgency=low
+
+  * install-sidux-binary-gfx added. This will install the Sidux Package to
+    install the Nvidia / ATI Kernel Module.
+
+ -- Andreas Weber <andreas@it-weber.com>  Tue, 16 Jan 2007 10:54:47 +0100
+
+sidux-scripts (0.1.14) unstable; urgency=low
+
+  * fix defaults for sidux.
+  * fix bashism.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  2 Jan 2007 15:32:15 +0100
+
+sidux-scripts (0.1.13) unstable; urgency=low
+
+  * remove install-chkrootkit-local install-f-prot-local, unionfs can do a
+    much better job these days.
+  * fix-xv-local is obsolete.
+  * use su-me where possible, use a canonical stanza for it.
+  * fix ntpserver defintions for fix-time.
+  * recommend ntpdate.
+  * use #!/bin/sh for all scripts.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Dec 2006 14:25:53 +0100
+
+sidux-scripts (0.1.12) unstable; urgency=low
+
+  [ Joaquim Boura ]
+  * Initial version for sidux
+
+  [ Stefan Lippers-Hollmann ]
+  * remove obsolete devmap_mknod.
+  * remove obsolete make-qt-deb.
+  * tweak debian/control.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  3 Dec 2006 02:53:37 +0100
+
+kanotix-scripts (0.1.11) unstable; urgency=low
+
+  * white space clean up.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 16 Nov 2006 21:28:30 +0100
+
+kanotix-scripts (0.1.10) unstable; urgency=low
+
+  * use pool.ntp.org for fix-time.
+  * fix bashisms.
+  * use kanotix-su.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  9 Nov 2006 21:10:13 +0100
+
+kanotix-scripts (0.1.9) unstable; urgency=low
+
+  * switch to utf-8.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  1 Nov 2006 00:27:07 +0100
+
+kanotix-scripts (0.1.8) unstable; urgency=low
+
+  [ Stefan Lippers-Hollmann ]
+  * XFree86 4.3 is obsolete.
+
+  [ Joerg Schirottke ]
+  * update fix-5b-mouse.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  1 Nov 2006 00:27:01 +0100
+
+kanotix-scripts (0.1.7) unstable; urgency=low
+
+  * temporarily support XFree86 4.3 again.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 13 Sep 2006 02:23:49 +0200
+
+kanotix-scripts (0.1.6) unstable; urgency=low
+
+  * XFree86 4.3 is obsolete.
+  * quote variables.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Aug 2006 13:59:15 +0200
+
+kanotix-scripts (0.1.5) unstable; urgency=low
+
+  * remove cdbs auto update feature.
+  * bump compat level to 5.
+  * bump standards version to 3.7.2.
+  * update fix-5b-mouse.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 29 Aug 2006 13:53:43 +0200
+
+kanotix-scripts (0.1.4) unstable; urgency=low
+
+  * fix/ adapt fix-5b-mouse for X.org 6.9.0.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 31 Dec 2005 13:36:42 +0100
+
+kanotix-scripts (0.1.3) unstable; urgency=low
+
+  * move fix-udev-lan to kanotix-udev-config.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 16 Oct 2005 23:54:07 +0200
+
+kanotix-scripts (0.1.2) unstable; urgency=low
+
+  * add fix-udev-lan.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Oct 2005 23:41:44 +0200
+
+kanotix-scripts (0.1.1) unstable; urgency=low
+
+  * add dh_make to dependencies.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 15 Oct 2005 13:49:23 +0200
+
+kanotix-scripts (0.1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 23 Aug 2005 11:03:21 +0200
+

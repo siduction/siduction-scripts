@@ -1,0 +1,81 @@
+#!/bin/sh
+
+if [ "$(id -u)" -ne 0 ]; then
+	[ -x "$(which su-to-root)" ] && exec su-to-root -X -c "$0" "$@"
+	printf "ERROR: $0 needs root capabilities, please start it as root.\n\n" >&2
+	exit 1
+fi
+
+unset RESUME SWAPUUID
+
+if [ -s /etc/initramfs-tools/conf.d/resume ]; then
+	. /etc/initramfs-tools/conf.d/resume
+fi
+
+if [ -n "${RESUME}" ]; then
+	echo -n "Validating resume partition..."
+
+	case "${RESUME}" in
+		UUID=*|LABEL=*)
+			if findfs "${RESUME}"; then
+				echo "Valid resume device: ${RESUME}"
+				exit 0
+			else
+				echo "invalid."
+			fi
+			;;
+		/dev/disk/by-*)
+			RESUMELINK=$(readlink -f ${RESUME})
+			if [ -b "${RESUMELINK}" ]; then
+				echo "${RESUMELINK}"
+				echo "Valid resume device: ${RESUME}"
+				exit 0
+			else
+				echo "invalid."
+			fi
+			;;
+		/dev/*)
+			echo "invalid."
+			if [ -b "${RESUME}" ]; then
+				SWAPUUID=$(blkid -t TYPE=swap -o value -s UUID ${RESUME})
+			fi
+			;;
+	esac
+fi
+
+if [ -z "${SWAPUUID}" ]; then
+	SWAPUUID=$(blkid -l -t TYPE=swap -o value -s UUID)
+fi
+
+if echo "${SWAPUUID}" | egrep -q '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$'; then
+	echo "Using UUID=${SWAPUUID} for resume."
+	if [ -d /etc/initramfs-tools/conf.d/ ]; then
+		# (over)write configuration
+		echo "Writing new configuration to /etc/initramfs-tools/conf.d/resume..."
+		echo "RESUME=UUID=${SWAPUUID}" > /etc/initramfs-tools/conf.d/resume
+	fi
+
+	if grep -q -s '^resume device\ =' /etc/uswsusp.conf; then
+		echo "Writing new configuration to /etc/uswsusp.conf..."
+		sed -i 's|^\(resume\ device\ =\).*|\1 '"UUID=${SWAPUUID}"'|' /etc/uswsusp.conf
+	fi
+else
+	echo "No swap partition UUID could be detected by blkid(8)."
+	echo "Not configuring resume partition."
+	exit 3
+fi
+
+if [ -x /usr/sbin/update-initramfs ]; then
+	# rebuild the initramfs
+	echo "Updating initial ramdisk for new resume configuration..."
+	
+	update-initramfs -u -k "$(uname -r)"
+fi
+
+echo
+echo "A new resume configuration has been written to:"
+echo "  /etc/initramfs-tools/conf.d/resume"
+echo
+echo "If you do not trust me to make the correct choice, then please"
+echo "check the file and change according to your needs."
+echo

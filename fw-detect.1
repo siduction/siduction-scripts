@@ -1,0 +1,39 @@
+.TH "FW\-DETECT" "1" "2009-10-23" "Linux"
+.SH "NAME"
+fw\-detect \- Check system firmware status
+.SH "SYNOPSIS"
+.BR fw\-detect
+.SH "DESCRIPTION"
+.LP 
+.BR fw\-detect
+fw\-detect scans the loaded modules on your system, checks if they require
+firmware and checks if the firmware is present in the correct location.
+
+By default it will only output information about any modules which appear to
+require firmware.  With the \-a option you can see the information for all
+modules fw-detect knows about.   With the \-y option it will attempt to install
+any missing firmwares where possible.   With the \-i option it will only attempt
+to install missing firmware for the given module, though it will still provide
+the information about other modules which it believes require firmware.
+.SH OPTIONS
+.TP
+.IP \-a
+Display information on all known modules.
+.TP
+\fB\-h\fR
+Display help message.
+.TP
+\fB\-i \fI<module>\fR
+Install firmware for given module.
+.TP
+\fB\-s\fR
+Short output mode.
+.TP
+\fB\-v\fR
+Increase verbosity (repeat for more).
+.TP
+\fB\-x\fR
+Print commands and their arguments for debugging.
+.TP
+\fB\-y\fR
+Try to install firmwares believed to be required.

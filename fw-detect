@@ -1,0 +1,63 @@
+#!/bin/bash
+#
+# Copyright 2007 Kel Modderman <kel@otaku42.de>
+# License: GPLv2
+#
+# Script to check if firmware or other non-free drivers are required.
+#
+# Copyright 2009 Niall Walsh <niallwalsh@users.berlios.de>
+# Major modifications to disconnect data from scripts
+
+function selfhelp () {
+	echo "Usage:
+  $0 (-y|-i module) (-a) (-h) (-s) (-v) (-x)
+    -y          try to install needed firmwares
+    -i module   install firmware for given module
+    -a          show information on all known modules
+    -h          show this help message
+    -s          enable short output mode
+    -v          increase verbosity (repeat for more)
+    -x          prints executed commands and their arguments for debugging
+"
+}
+
+. /usr/share/siduction-scripts/fw
+
+#
+# check for get_dvb_firmware script
+#
+[[ -x $(which get_dvb_firmware) ]] && DVB=1 || DVB=0
+
+while getopts ahisvxy opt; do
+	case "${opt}" in
+		a)
+			show_all_cards
+			;;
+		h)
+			selfhelp
+			exit
+			;;
+		i)
+			install_driver $2
+			;;
+		s)
+			short="TRUE"
+			;;
+		v)
+			((verbosity++))
+			;;
+		x)
+			set -x
+			;;
+		y)
+			#installable driver
+			short="TRUE"
+			install_possible="TRUE"
+			;;
+		*)
+			selfhelp
+			exit
+	esac
+done
+
+sys_detect
