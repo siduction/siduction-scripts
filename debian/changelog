@@ -1,6 +1,9 @@
-aptosid-scripts (0.4.14) UNRELEASED; urgency=low
+aptosid-scripts (0.5.00); urgency=low
+
+   * bumped version to 0.5  
 
   -- Ferdinand Thommes <devil@siduction.org> Thur,13 Oct 2011 23:40:43 +0200
+
   * adapted aptosid-scripts for siduction
 
   * NOT RELEASED YET
