@@ -1,17 +1,19 @@
-aptosid-scripts (0.5.00); urgency=low
+siduction-scripts (0.4.14) UNRELEASED; urgency=low
 
-   * bumped version to 0.5  
-
-  -- Ferdinand Thommes <devil@siduction.org> Thur,13 Oct 2011 23:40:43 +0200
-
-  * adapted aptosid-scripts for siduction
-
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
   * update firmware db:
     - Realtek 8192C/8188C 802.11n PCI wireless
     - Realtek 8192S/8191S 802.11n PCI wireless
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Jul 2011 19:38:25 +0200
+  [ Ferdinand Thommes ]
+  * initial release for siduction
+  * changed pastebin from poco to codepad and infoscript from infobash
+    to inxi
+  * removed all occurances of the name aptosid
+  * added debian/options file
+
+ -- Ferdinand Thommes <devil@siduction.org>  Sat, 22 Oct 2011 10:07:43 +0200
 
 aptosid-scripts (0.4.13) unstable; urgency=low
 
