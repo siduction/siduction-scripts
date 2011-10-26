@@ -7,7 +7,7 @@ XSBC-Maintainer:Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Build-Depends: debhelper (>= 8),
  libconfig-tiny-perl
 Standards-Version: 3.9.2
-Vcs-Svn:git://git.siduction.org/packages/siduction-repository/siduction-scripts.git
+Vcs-Git:git://git.siduction.org/packages/siduction-repository/siduction-scripts.git
 Vcs-Browser: http://git.siduction.org/?p=packages/siduction-repository/siduction-scripts.git;a=summary
 
 Package: siduction-scripts

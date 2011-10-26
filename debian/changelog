@@ -1,3 +1,10 @@
+siduction-scripts (0.4.14+nmu1) UNRELEASED; urgency=low
+
+  * Non-maintainer upload.
+  * fixed debian/control 
+
+ -- Dinko Sabo <vibora@siduction.org>  Wed, 26 Oct 2011 21:54:48 +0200
+
 siduction-scripts (0.4.14) UNRELEASED; urgency=low
 
   [ Stefan Lippers-Hollmann ]
