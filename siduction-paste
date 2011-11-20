@@ -54,7 +54,7 @@ delete () {
 	fi
 	PASTE_DEL="${1##*/}"
 	echo "$(date -u +%Y%m%d%H%M%S) I: file '$PASTE_DEL' does exist and can be overwritten" >> $PASTE_LOG
-	if [ -z "$(curl -s -l -u siduction:paste $PASTE_FTP | grep $PASTE_DEL)" ]
+	if [ -z "$(curl -s -l -u debian:paste $PASTE_FTP | grep $PASTE_DEL)" ]
 	then
 		echo "E: The file '$PASTE_URL' doesn't exist anymore, aborting."
 		echo "$(date -u +%Y%m%d%H%M%S) E: The file '$PASTE_URL' doesn't exist anymore, aborting." >> $PASTE_LOG
@@ -65,6 +65,7 @@ delete () {
 		echo -n "" > $PASTE_PATH
 		echo "Paste file '$PASTE_PATH' has been emptied"
 		echo "$(date -u +%Y%m%d%H%M%S) I: paste file '$PASTE_PATH' has been emptied" >> $PASTE_LOG
+		PASTE_URL="$PASTE_HTTP/$PASTE_DEL"
 		upload
 	fi
 }
