@@ -15,9 +15,12 @@ Architecture: all
 Depends: ${misc:Depends},
  perl,
  distro-defaults,
- wodim
+ wodim,
+ bash,
+ curl
 Recommends: menu,
- ntpdate
+ ntpdate,
+ scrot
 Description: miscellaneous scripts for siduction
  Script collection for live and install uses on siduction:
   * burniso (write an ISO image from cli)
