@@ -5,7 +5,7 @@ PASTE_LOG="$PASTE_DIR/siduction-paste.log"
 PASTE_FILE="$(date -u +%Y%m%d%H%M%S)"
 PASTE_PATH="$PASTE_DIR/$PASTE_FILE"
 PASTE_HTTP="http://paste.siduction.org"
-PASTE_FTP="ftp://coruja.info"
+PASTE_FTP="ftp://paste.siduction.org"
 PASTE_URL="$PASTE_HTTP/$PASTE_FILE"
 PASTE_USAGE="Usage: siduction-paste [-d PASTEFILE|-h|-s] [FILE|COMMAND]"
 
