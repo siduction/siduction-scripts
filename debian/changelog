@@ -1,3 +1,9 @@
+siduction-scripts (0.4.15) UNRELEASED; urgency=low
+
+  * sidction-paste changed
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 30 Dec 2011 15:01:28 +0100
+
 siduction-scripts (0.4.14+nmu1) UNRELEASED; urgency=low
 
   * Non-maintainer upload.

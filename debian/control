@@ -2,7 +2,7 @@ Source: siduction-scripts
 Section: misc
 Priority: extra
 Maintainer: Ferdinand Thommes <devil@siduction.org>
-Uploaders: Ferdinand Thommes <devil@siduction.org>
+Uploaders: Alf Gaida <agaida@siduction.org>
 XSBC-Maintainer:Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Build-Depends: debhelper (>= 8),
  libconfig-tiny-perl
