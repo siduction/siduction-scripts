@@ -1,3 +1,9 @@
+siduction-scripts (0.4.16) UNRELEASED; urgency=low
+
+  * merged changes from commit 386d06de92beb583747f7755dd74bcb7ac462ae8
+
+ -- Ferdinand Thommes <devil@siduction.org>  Sat, 28 Jan 2012 14:11:33 +0100
+
 siduction-scripts (0.4.15) UNRELEASED; urgency=low
 
   * sidction-paste changed
