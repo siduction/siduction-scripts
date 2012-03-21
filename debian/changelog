@@ -1,3 +1,11 @@
+siduction-scripts (0.4.17) UNRELEASED; urgency=low
+
+  * bump standards to 3.9.3
+  * bump debhelper to (>=9) 
+  * .gitignore created 
+
+ -- Alf Gaida <agaida@siduction.org>  Wed, 21 Mar 2012 14:58:32 +0100
+
 siduction-scripts (0.4.16) UNRELEASED; urgency=low
 
   * merged changes from commit 386d06de92beb583747f7755dd74bcb7ac462ae8
