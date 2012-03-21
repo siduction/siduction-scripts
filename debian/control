@@ -16,7 +16,6 @@ Depends: ${misc:Depends},
  perl,
  distro-defaults,
  wodim,
- bash,
  curl
 Recommends: menu,
  ntpdate,

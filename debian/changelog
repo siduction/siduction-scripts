@@ -1,3 +1,15 @@
+siduction-scripts (0.4.18) UNRELEASED; urgency=low
+
+  * debian/control removed bash as dependency. bash is essential an must not
+    be in the dependencies (There are normaly no reasons to add it). Get rid of
+    depends-on-essential-package-without-using-version Error. 
+  * not willing to do any more atm. If the scripts has no manpage this can be 
+    imho ok. But in this case the script must provide at minimum a usage message
+    and/or a good help. All other is crap.
+  * refs #637 
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 22 Mar 2012 00:38:13 +0100
+
 siduction-scripts (0.4.17) UNRELEASED; urgency=low
 
   * bump standards to 3.9.3
