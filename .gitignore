@@ -1,0 +1,6 @@
+debian/files
+debian/siduction-scripts.debhelper.log
+debian/siduction-scripts.substvars
+debian/siduction-scripts/
+fw-data.sh
+
