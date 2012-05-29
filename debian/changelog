@@ -1,3 +1,11 @@
+siduction-scripts (0.4.18+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * update firmware db
+    - Intel Wireless 3945, 4965 and 5000-series cards 
+
+ -- Torsten Wohlfarth <towo@siduction.org>  Tue, 29 May 2012 12:23:34 +0200
+
 siduction-scripts (0.4.18) unstable; urgency=low
 
   * debian/control removed bash as dependency. bash is essential an must not
