@@ -1,4 +1,4 @@
-siduction-scripts (0.4.18+nmu3) UNRELEASED; urgency=low
+siduction-scripts (0.4.19) unstable; urgency=low
 
   [ Ferdinand Thommes ]
   * updated fw-data.ini to fetch the right firmware for AR7010+AR9287
@@ -7,7 +7,7 @@ siduction-scripts (0.4.18+nmu3) UNRELEASED; urgency=low
   [ Alf Gaida ]
   * rebuild closes #992 
 
- -- Ferdinand Thommes <devil@siduction.org>  Wed, 28 Nov 2012 21:34:58 +0100
+ -- Alf Gaida <agaida@siduction.org>  Thu, 29 Nov 2012 19:12:41 +0100
 
 siduction-scripts (0.4.18+nmu2) unstable; urgency=low
 
