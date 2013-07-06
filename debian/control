@@ -33,3 +33,4 @@ Description: miscellaneous scripts for siduction
   * remove-orphans (purge files which were merely removed)
   * siduction-paste (paste cli output, text files, images and screenshots to \
     our pastebin)
+ * addpkg add a $flavour package list to an installed system must be called as addpkg $flavour

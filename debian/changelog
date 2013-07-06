@@ -1,3 +1,10 @@
+siduction-scripts (0.4.20) unstable; urgency=low
+
+  * added addpkg script to add flavour packages list in an existing 
+    siduction install
+
+ -- Ovidiu Angelescu <convbsd@siduction.org>  Sat, 6 July 2013 19:25:41 +0300
+
 siduction-scripts (0.4.19) unstable; urgency=low
 
   [ Ferdinand Thommes ]

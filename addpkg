@@ -1,0 +1,89 @@
+#!/bin/sh
+
+AddPackages()
+{
+# removes any possible left package list
+rm -f /usr/share/siduction-scripts/packages/$1-packages
+
+case $1 in
+	cinnamon)
+	pkgfile=960-siduction-cinnamon
+	;;
+	gnome)
+	pkgfile=930-siduction-gnome
+	;;
+	kde)
+	pkgfile=940-siduction-kde
+	;;
+	lxde)
+	pkgfile=920-siduction-lxde
+	;;
+	rqt)
+	pkgfile=900-siduction-rqt
+	;;
+	xfce)
+	pkgfile=950-siduction-xfce
+	;;
+	custom)
+	pkgfile=custom-pklist
+	;;
+	*)
+	;;
+esac
+
+# get using curl pyfll requested pkglist or show a message for custom pkg list
+if [ "$1" != "custom" ]; then
+	echo "Fetching siduction $1 packages list."
+	sleep 2
+	curl -'#' -o /usr/share/siduction-scripts/packages/$pkgfile http://chili.siduction.org/projects/pyfll/repository/revisions/master/raw/pyfll/packages/packages.d/$pkgfile
+else 
+	if [ ! -f /usr/share/siduction-scripts/packages/custom-pklist ] ; then
+		echo '######################################################'
+		echo 'WARNING custom pkglist file not found!'
+		echo 'Please add file /usr/share/siduction-scripts/custom-pklist.'
+		echo 'Please use as template /usr/share/siduction-scripts/custom-pklist.ex file.'
+		echo "WARNING don't add inexistent packages names to don't get in trouble."
+		echo 'Thank you !'
+		echo '######################################################'
+		exit 1
+	fi
+fi
+
+# build package list to be added
+for i in /usr/share/siduction-scripts/packages/$pkgfile ; do
+	while read line ; do
+		pkg_line=$(echo $line | grep -v  -e '"' -e 'Desc' -e '#' -e 'packages' -e 'Siduction ' -e 'siduction ' -e 'siduction-live' -e 'fll-live') 
+		if [ -n "$pkg_line" ]; then
+			echo "$pkg_line " >> /usr/share/siduction-scripts/packages/$1-packages
+		fi 
+	done < $i
+done
+
+if [ "$1" != "custom" ]; then
+# removes requested pyfll pkglist 
+	rm -f /usr/share/siduction-scripts/packages/$pkgfile
+else
+# moves custom pkg list to custom-pklist.orig and show a message about it
+	echo '######################################################'
+	echo "Moving $pkgfile to $pkgfile.orig"
+	echo "If you don't need it anymore you should remove it."
+	echo '######################################################'
+	mv /usr/share/siduction-scripts/packages/$pkgfile /usr/share/siduction-scripts/packages/${pkgfile}.orig
+fi
+
+# install files
+apt-get install $(cat /usr/share/siduction-scripts/packages/$1-packages)
+
+# removes built package list 
+rm -f /usr/share/siduction-scripts/packages/$1-packages
+}
+
+case "$1" in
+    cinnamon|custom|gnome|kde|lxde|rqt|xfce)
+    AddPackages $1
+    ;;
+    *)
+        echo "Usage: addpkg {cinnamon|gnome|kde|lxde|rqt|xfce|custom}"
+        exit 1
+    ;;
+esac
