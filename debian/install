@@ -9,6 +9,7 @@ fw-data.sh			usr/share/siduction-scripts/
 fw-detect			usr/bin/
 get-resume-partition		usr/sbin/
 inetconn			usr/bin/
+live				usr/sbin/
 remove-gateway			usr/sbin/
 remove-orphans			usr/sbin/
 siduction-paste			usr/bin/

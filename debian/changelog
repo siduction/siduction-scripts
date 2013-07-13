@@ -1,3 +1,16 @@
+siduction-scripts (0.4.23) UNRELEASED; urgency=low
+
+  * cosmetical changes to live script
+  * added siducation-full and siducation-lite support
+
+ -- Ovidiu Angelescu <convbsd@siduction.org>  Wed, 10 July 2013 17:41:41 +0300
+
+siduction-scripts (0.4.22) UNRELEASED; urgency=low
+
+  * added live script to mount under iso fll/aufs for testing live packages
+
+ -- Ovidiu Angelescu <convbsd@siduction.org>  Sun, 7 July 2013 11:25:41 +0300
+
 siduction-scripts (0.4.20) unstable; urgency=low
 
   * added addpkg script to add flavour packages list in an existing 

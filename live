@@ -1,0 +1,43 @@
+#!/bin/sh
+
+MountLive()
+{
+if ! ischroot ; then
+# mounts dev proc sys dev/pts under /fll/aufs
+    echo " Mounting dev proc sys dev/pts under /fll/aufs and chroot there."
+    echo " Please run exit and then live out to exit chroot."
+    for i in dev dev/pts proc sys  ; do
+    	mount --bind /$i /fll/aufs/$i
+    done
+    chroot /fll/aufs
+else
+    echo "Please exit chroot and type live go"
+fi
+}
+
+UmountLive()
+{
+# umounts dev proc sys dev/pts from /fll/aufs
+if ! ischroot ; then
+    echo " Umounting dev proc sys dev/pts from fll/aufs."
+    for i in  sys proc dev/pts dev  ; do
+        umount /fll/aufs/$i
+    done
+else
+    echo "Please exit chroot and type live out"
+fi
+}
+
+case "$1" in
+    go)
+    MountLive
+    ;;
+    out)
+    UmountLive
+    ;;
+    *)
+        echo "This script should be runned outside chroot"
+        echo "Usage: live {go|out}"
+        exit 1
+    ;;
+esac
