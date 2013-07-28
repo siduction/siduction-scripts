@@ -1,4 +1,4 @@
-siduction-scripts (0.4.23) unstable; urgency=low
+siduction-scripts (2013.07.28) unstable; urgency=low
 
   [ Ovidiu Angelescu ]
   * cosmetical changes to live script
@@ -6,6 +6,7 @@ siduction-scripts (0.4.23) unstable; urgency=low
 
   [ Alf Gaida ]
   * Rebuild closes #1280 
+  * Version changed to date-based versions
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 28 Jul 2013 22:21:54 +0200
 

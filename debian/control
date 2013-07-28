@@ -5,8 +5,8 @@ Maintainer: Ferdinand Thommes <devil@siduction.org>
 Uploaders: Alf Gaida <agaida@siduction.org>
 XSBC-Maintainer:Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Build-Depends: debhelper (>= 9),
-   libconfig-tiny-perl
-Standards-Version: 3.9.3
+   libconfig-tiny-perl,
+Standards-Version: 3.9.4
 Vcs-Git:git://git.siduction.org/code/siduction-scripts.git
 Vcs-Browser: http://git.siduction.org/?p=code/siduction-scripts.git;a=summary
 
@@ -16,10 +16,10 @@ Depends: ${misc:Depends},
  perl,
  distro-defaults,
  wodim,
- curl
+ curl,
 Recommends: menu,
  ntpdate,
- scrot
+ scrot,
 Description: miscellaneous scripts for siduction
  Script collection for live and install uses on siduction:
   * burniso (write an ISO image from cli)
