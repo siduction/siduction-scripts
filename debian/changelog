@@ -1,9 +1,13 @@
-siduction-scripts (0.4.23) UNRELEASED; urgency=low
+siduction-scripts (0.4.23) unstable; urgency=low
 
+  [ Ovidiu Angelescu ]
   * cosmetical changes to live script
   * added siducation-full and siducation-lite support
 
- -- Ovidiu Angelescu <convbsd@siduction.org>  Wed, 10 July 2013 17:41:41 +0300
+  [ Alf Gaida ]
+  * Rebuild closes #1280 
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 28 Jul 2013 22:21:54 +0200
 
 siduction-scripts (0.4.22) UNRELEASED; urgency=low
 
