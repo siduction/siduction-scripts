@@ -114,6 +114,12 @@ else
 		exit 1
 	fi
 	PASTE_INPUT="$1"
+	if [ -p "$PASTE_INPUT" ]
+	then
+	    cat "$PASTE_INPUT" > "${PASTE_PATH}.tmp";
+	    PASTE_INPUT="${PASTE_PATH}.tmp";
+	    echo "$(date -u +%Y%m%d%H%M%S) I: created tmp file '${PASTE_FILE}.tmp' from named pipe" >> "$PASTE_LOG"
+	fi
 	if [ ! -f $PASTE_INPUT ]
 	then
 		echo "E: The file '$PASTE_INPUT' doesn't exist. Aborting."
@@ -137,6 +143,9 @@ else
 		cp $PASTE_INPUT $PASTE_PATH
 	fi
 	upload
+	if [ -f "${PASTE_PATH}.tmp" ]
+	then rm "${PASTE_PATH}.tmp"
+	fi
 fi
 
 #EOF

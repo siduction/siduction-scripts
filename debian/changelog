@@ -1,3 +1,9 @@
+siduction-scripts (2014.04.22) unstable; urgency=medium
+
+  * siduction-paste patched to work with named pipes, thank grondilu
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 22 Apr 2014 23:32:17 +0200
+
 siduction-scripts (2013.07.28) unstable; urgency=low
 
   [ Ovidiu Angelescu ]
@@ -7,8 +13,12 @@ siduction-scripts (2013.07.28) unstable; urgency=low
   [ Alf Gaida ]
   * Rebuild closes #1280 
   * Version changed to date-based versions
+  * debian/control still need some love
+  * debian/copyright still need some love
+  * remove slh as XBSC-Maintainer
+  * remove lintian-override for XBSC
 
- -- Alf Gaida <agaida@siduction.org>  Sun, 28 Jul 2013 22:21:54 +0200
+ -- Alf Gaida <agaida@siduction.org>  Sun, 28 Jul 2013 22:35:23 +0200
 
 siduction-scripts (0.4.22) UNRELEASED; urgency=low
 
