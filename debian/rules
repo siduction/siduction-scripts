@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
-set DH_VERBOSE=1
+export DH_VERBOSE=1
 
 %:
 	dh $@
+

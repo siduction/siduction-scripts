@@ -2,88 +2,144 @@
 
 AddPackages()
 {
-# removes any possible left package list
-rm -f /usr/share/siduction-scripts/packages/$1-packages
+PKGDIR=/usr/share/siduction-scripts/packages
+
+if [ -e /etc/default/distro ]; then
+    . /etc/default/distro
+fi
+
+settings_version=$(echo $FLL_WALLPAPER | cut -d - -f 2)
 
 case $1 in
-	cinnamon)
-	pkgfile=960-siduction-cinnamon
-	;;
-	gnome)
-	pkgfile=930-siduction-gnome
-	;;
-	kde)
-	pkgfile=940-siduction-kde
-	;;
-	lxde)
-	pkgfile=920-siduction-lxde
-	;;
-	rqt)
-	pkgfile=900-siduction-rqt
-	;;
-	xfce)
-	pkgfile=950-siduction-xfce
-	;;
-	custom)
-	pkgfile=custom-pklist
-	;;
-	*)
-	;;
+        cinnamon)
+        PACK_PROFILE=cinnamon
+        ;;
+        gnome)
+        PACK_PROFILE=gnome
+        ;;
+        kde)
+        PACK_PROFILE=kde
+        ;;
+        plasma5)
+        PACK_PROFILE=plasma5
+        ;;
+        lxde)
+        PACK_PROFILE=lxde
+        ;;
+        lxqt)
+        PACK_PROFILE=lxqt
+        ;;
+        lxqt-qt5)
+        PACK_PROFILE=lxqt-qt5
+        ;;
+        mate)
+        PACK_PROFILE=mate
+        ;;
+        rqt)
+        PACK_PROFILE=rqt
+        ;;
+        siducation-full)
+        PACK_PROFILE=siducation-full
+        ;;
+        siducation-lite)
+        PACK_PROFILE=siducation-lite
+        ;;
+        xfce)
+        PACK_PROFILE=xfce
+        ;;
+        custom)
+        PACK_PROFILE=custom
+        ;;
+        *)
+        ;;
 esac
 
-# get using curl pyfll requested pkglist or show a message for custom pkg list
-if [ "$1" != "custom" ]; then
-	echo "Fetching siduction $1 packages list."
-	sleep 2
-	curl -'#' -o /usr/share/siduction-scripts/packages/$pkgfile http://chili.siduction.org/projects/pyfll/repository/revisions/master/raw/pyfll/packages/packages.d/$pkgfile
-else 
-	if [ ! -f /usr/share/siduction-scripts/packages/custom-pklist ] ; then
-		echo '######################################################'
-		echo 'WARNING custom pkglist file not found!'
-		echo 'Please add file /usr/share/siduction-scripts/custom-pklist.'
-		echo 'Please use as template /usr/share/siduction-scripts/custom-pklist.ex file.'
-		echo "WARNING don't add inexistent packages names to don't get in trouble."
-		echo 'Thank you !'
-		echo '######################################################'
-		exit 1
-	fi
-fi
-
-# build package list to be added
-for i in /usr/share/siduction-scripts/packages/$pkgfile ; do
-	while read line ; do
-		pkg_line=$(echo $line | grep -v  -e '"' -e 'Desc' -e '#' -e 'packages' -e 'Siduction ' -e 'siduction ' -e 'siduction-live' -e 'fll-live') 
-		if [ -n "$pkg_line" ]; then
-			echo "$pkg_line " >> /usr/share/siduction-scripts/packages/$1-packages
-		fi 
-	done < $i
-done
-
-if [ "$1" != "custom" ]; then
-# removes requested pyfll pkglist 
-	rm -f /usr/share/siduction-scripts/packages/$pkgfile
+if [ "$PACK_PROFILE" = "custom" ]; then
+    if [ ! -f ${PKGDIR}/custom ] ; then
+        echo '######################################################'
+        echo 'WARNING custom pkglist file not found!'
+        echo 'Please add file /usr/share/siduction-scripts/custom.'
+        echo 'Please use as template /usr/share/siduction-scripts/custom.ex file.'
+        echo "WARNING don't add inexistent packages names to don't get in trouble."
+        echo 'Thank you !'
+        echo '######################################################'
+        exit 1
+    else
+    # moves custom pkg list to custom-pklist.orig and show a message about it
+    echo '######################################################'
+    echo "Cpying custom pkglist  to custom.orig"
+    echo "If you don't need it anymore you should remove it."
+    echo '######################################################'
+    awk '/^packages/,/^"""/' ${PKGDIR}/${PACK_PROFILE}  | grep -v '"""' | grep -v '#' > ${PKGDIR}/${PACK_PROFILE}-pkglist
+    cp ${PKGDIR}/$PACK_PROFILE ${PKGDIR}/${PACK_PROFILE}.orig
+    fi
 else
-# moves custom pkg list to custom-pklist.orig and show a message about it
-	echo '######################################################'
-	echo "Moving $pkgfile to $pkgfile.orig"
-	echo "If you don't need it anymore you should remove it."
-	echo '######################################################'
-	mv /usr/share/siduction-scripts/packages/$pkgfile /usr/share/siduction-scripts/packages/${pkgfile}.orig
-fi
+
+case ${settings_version} in 
+     whiteroom|indiansummer)
+     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
+     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     ;;
+     *)
+    echo "        siduction-settings-${PACK_PROFILE}-paintitblack" > ${PKGDIR}/${PACK_PROFILE}-pkglist
+    echo "        siduction-art-${PACK_PROFILE}-paintitblack" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+    echo "        siduction-art-wallpaper-paintitblack" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     ;;
+esac
+
+
+
+
+    # get using curl pyfll requested PACK_PROFILE or show a message for custom pkg list
+    #if [ "${PACK_PROFILE}" != "custom" ]; then
+        echo "Fetching siduction ${PACK_PROFILE}  profile list."
+        sleep 2
+        curl -'#' -o  ${PKGDIR}/${PACK_PROFILE} http://bugs.siduction.org/projects/pyfll/repository/revisions/master/raw/pyfll/packages/$PACK_PROFILE
+
+    # Reads packages from packages profile
+    awk '/^packages/,/^"""/' ${PKGDIR}/${PACK_PROFILE}  | grep -v '"""' | grep -v '#' >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+
+    # Search main file package for include dependecies
+    # and build an depends file ( depends )
+    awk '/^deps/,/^"""/' ${PKGDIR}/${PACK_PROFILE} | grep -v '"""' | grep -v '#' > ${PKGDIR}/${PACK_PROFILE}-deps
+    
+    cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v 200 | grep -v 100 | grep -v 300 |grep -v 500 >  ${PKGDIR}/${PACK_PROFILE}-depends
+
+    while read pkgdepends ; do
+        echo "Fetching for ${PACK_PROFILE} profile $pkgdepends depend." 
+        curl -'#' -o ${PKGDIR}/$pkgdepends-depfiles http://bugs.siduction.org/projects/pyfll/repository/revisions/master/raw/pyfll/packages/packages.d/$pkgdepends
+    done < ${PKGDIR}/${PACK_PROFILE}-depends 
+
+    for i in ${PKGDIR}/*-depfiles; do
+     awk '/^packages/,/^"""/' ${i} | grep -v '"""' | grep -v '#' >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+    done
+
+    # Removes temporary files
+    if [ -f ${PKGDIR}/${PACK_PROFILE}-pkglist ] ; then
+        rm -f ${PKGDIR}/*-dep*
+        rm -f ${PKGDIR}/${PACK_PROFILE}
+    fi
+
+ 
+    fi
+
 
 # install files
-apt-get install $(cat /usr/share/siduction-scripts/packages/$1-packages)
+apt-get install $(cat ${PKGDIR}/${PACK_PROFILE}-pkglist)
 
 # removes built package list 
-rm -f /usr/share/siduction-scripts/packages/$1-packages
+rm -f /usr/share/siduction-scripts/packages/${PACK_PROFILE}-pkglist
 }
 
 case "$1" in
-    cinnamon|custom|gnome|kde|lxde|rqt|xfce)
+    cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|lxqt-qt5|mate|rqt|siducation-full|siducation-lite|xfce)
     AddPackages $1
     ;;
     *)
-        echo "Usage: addpkg {cinnamon|gnome|kde|lxde|rqt|xfce|custom}"
+        echo "Usage: addpkg {cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|lxqt-qt5|mate|rqt|siducaion-full|siducation-lite|xfce}"
         exit 1
     ;;
 esac
+
+
+

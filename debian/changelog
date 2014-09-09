@@ -1,3 +1,10 @@
+siduction-scripts (2014.09.09) unstable; urgency=medium
+
+  * rework of addpkg
+  * changed rules
+
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Tue, 09 Sep 2014 21:30:34 +0300
+
 siduction-scripts (2014.04.22) unstable; urgency=medium
 
   * siduction-paste patched to work with named pipes, thank grondilu
