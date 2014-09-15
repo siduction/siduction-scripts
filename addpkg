@@ -89,7 +89,7 @@ case ${settings_version} in
      indiansummer)
      echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
      echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
-     echo "        siduction-art-wallpaper-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     #echo "        siduction-art-wallpaper-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
      ;;
      *)
     echo "        siduction-settings-${PACK_PROFILE}-paintitblack" > ${PKGDIR}/${PACK_PROFILE}-pkglist
@@ -121,7 +121,8 @@ esac
         cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v 200 | grep -v 100 | grep -v 300 |grep -v 500 >  ${PKGDIR}/${PACK_PROFILE}-depends
         ;;
         nox)
-        cat ${PKGDIR}/${PACK_PROFILE}-deps  >  ${PKGDIR}/${PACK_PROFILE}-depends
+        cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v live | grep -v fll | grep -v installer >  ${PKGDIR}/${PACK_PROFILE}-depends
+        echo "        siduction-settings-lightdm-gtk-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
         ;;
         *)
         echo "You can use addpkg only over on installed NOX or XORG siduction."
