@@ -1,9 +1,9 @@
-siduction-scripts (2014.09.15.2) UNRELEASED; urgency=medium
+siduction-scripts (2014.09.15.2) unstable; urgency=medium
 
   * added in pkglist siduction-settings-lightdm-gtk-$release when installing 
     over nox 
 
- -- Angelescu Ovidiu <convbsd@siduction.org>  Mon, 15 Sep 2014 19:04:17 +0300
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Mon, 15 Sep 2014 21:50:17 +0300
 
 siduction-scripts (2014.09.15.1) unstable; urgency=medium
 
