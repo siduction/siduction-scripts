@@ -8,7 +8,13 @@ if [ -e /etc/default/distro ]; then
     . /etc/default/distro
 fi
 
-settings_version=$(echo $FLL_WALLPAPER | cut -d - -f 2)
+settings_version=$(echo $FLL_WALLPAPER | cut -d / -f 5)
+
+if [ -n $(dpkg -l | grep Xorg) ]; then
+    dest_platform=nox
+    else
+    dest_platform=xorg
+fi
 
 case $1 in
         cinnamon)
@@ -96,7 +102,7 @@ esac
 
 
     # get using curl pyfll requested PACK_PROFILE or show a message for custom pkg list
-    #if [ "${PACK_PROFILE}" != "custom" ]; then
+
         echo "Fetching siduction ${PACK_PROFILE}  profile list."
         sleep 2
         curl -'#' -o  ${PKGDIR}/${PACK_PROFILE} http://bugs.siduction.org/projects/pyfll/repository/revisions/master/raw/pyfll/packages/$PACK_PROFILE
@@ -107,8 +113,20 @@ esac
     # Search main file package for include dependecies
     # and build an depends file ( depends )
     awk '/^deps/,/^"""/' ${PKGDIR}/${PACK_PROFILE} | grep -v '"""' | grep -v '#' > ${PKGDIR}/${PACK_PROFILE}-deps
+
+    # Search if we have NOX or XORG 
     
-    cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v 200 | grep -v 100 | grep -v 300 |grep -v 500 >  ${PKGDIR}/${PACK_PROFILE}-depends
+   case ${dest_platform} in
+        xorg)
+        cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v 200 | grep -v 100 | grep -v 300 |grep -v 500 >  ${PKGDIR}/${PACK_PROFILE}-depends
+        ;;
+        nox)
+        cat ${PKGDIR}/${PACK_PROFILE}-deps  >  ${PKGDIR}/${PACK_PROFILE}-depends
+        ;;
+        *)
+        echo "You can use addpkg only over on installed NOX or XORG siduction."
+        ;;
+    esac
 
     while read pkgdepends ; do
         echo "Fetching for ${PACK_PROFILE} profile $pkgdepends depend." 
