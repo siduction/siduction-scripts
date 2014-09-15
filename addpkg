@@ -135,7 +135,7 @@ esac
     done < ${PKGDIR}/${PACK_PROFILE}-depends 
 
     for i in ${PKGDIR}/*-depfiles; do
-     awk '/^packages/,/^"""/' ${i} | grep -v '"""' | grep -v '#' >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     awk '/^packages/,/^"""/' ${i} | grep -v '"""' | grep -v '#' | grep -v siduction-meta-xsiduction | grep -v cli-installer >> ${PKGDIR}/${PACK_PROFILE}-pkglist
     done
 
     # Removes temporary files
@@ -147,6 +147,11 @@ esac
  
     fi
 
+
+if [ "${dest_platform}" = "nox" ]; then
+    apt-get install --assume-yes siduction-meta-xsiduction
+    apt-get purge --assume-yes sidu-installer fll-installer fll-live-initscripts fll-live-utils siduction-meta-xdebian
+fi
 
 # install files
 apt-get install $(cat ${PKGDIR}/${PACK_PROFILE}-pkglist)

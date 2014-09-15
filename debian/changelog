@@ -1,3 +1,9 @@
+siduction-scripts (2014.09.16) unstable; urgency=medium
+
+  * changes  to pkglist when installing over nox 
+
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Tue, 16 Sep 2014 00:25:26 +0300
+
 siduction-scripts (2014.09.15.2) unstable; urgency=medium
 
   * added in pkglist siduction-settings-lightdm-gtk-$release when installing 
