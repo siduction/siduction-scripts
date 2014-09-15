@@ -76,9 +76,14 @@ if [ "$PACK_PROFILE" = "custom" ]; then
 else
 
 case ${settings_version} in 
-     whiteroom|indiansummer)
+     whiteroom)
      echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
      echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     ;;
+     indiansummer)
+     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
+     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     echo "        siduction-art-wallpaper-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
      ;;
      *)
     echo "        siduction-settings-${PACK_PROFILE}-paintitblack" > ${PKGDIR}/${PACK_PROFILE}-pkglist

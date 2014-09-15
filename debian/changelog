@@ -1,3 +1,9 @@
+siduction-scripts (2014.09.15) unstable; urgency=medium
+
+  * added indiansummer settings to addpkg
+
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Mon, 15 Sep 2014 17:58:57 +0300
+
 siduction-scripts (2014.09.09) unstable; urgency=medium
 
   * rework of addpkg
