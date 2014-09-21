@@ -35,9 +35,6 @@ case $1 in
         lxqt)
         PACK_PROFILE=lxqt
         ;;
-        lxqt-qt5)
-        PACK_PROFILE=lxqt-qt5
-        ;;
         mate)
         PACK_PROFILE=mate
         ;;
@@ -161,11 +158,11 @@ rm -f /usr/share/siduction-scripts/packages/${PACK_PROFILE}-pkglist
 }
 
 case "$1" in
-    cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|lxqt-qt5|mate|rqt|siducation-full|siducation-lite|xfce)
+    cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|mate|rqt|siducation-full|siducation-lite|xfce)
     AddPackages $1
     ;;
     *)
-        echo "Usage: addpkg {cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|lxqt-qt5|mate|rqt|siducaion-full|siducation-lite|xfce}"
+        echo "Usage: addpkg {cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|mate|rqt|siducation-full|siducation-lite|xfce}"
         exit 1
     ;;
 esac

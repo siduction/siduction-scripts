@@ -1,3 +1,9 @@
+siduction-scripts (2014.09.21) unstable; urgency=medium
+
+  * removed lxqt-qt5 profile  from addpkg
+
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Sun, 21 Sep 2014 17:42:20 +0000
+
 siduction-scripts (2014.09.16) unstable; urgency=medium
 
   * changes  to pkglist when installing over nox 
