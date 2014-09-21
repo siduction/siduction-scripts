@@ -10,7 +10,9 @@ fi
 
 settings_version=$(echo $FLL_WALLPAPER | cut -d / -f 5)
 
-if [ -n $(dpkg -l | grep Xorg) ]; then
+xorg_installed=$(dpkg -l | grep Xorg)
+
+if [ -n "${xorg_installed}" ]; then
     dest_platform=nox
     else
     dest_platform=xorg
@@ -118,7 +120,7 @@ esac
         cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v 200 | grep -v 100 | grep -v 300 |grep -v 500 >  ${PKGDIR}/${PACK_PROFILE}-depends
         ;;
         nox)
-        cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v live | grep -v fll | grep -v installer >  ${PKGDIR}/${PACK_PROFILE}-depends
+        cat ${PKGDIR}/${PACK_PROFILE}-deps | grep -v 200 | grep -v 100 | grep -v 300 | grep -v live | grep -v fll | grep -v installer >  ${PKGDIR}/${PACK_PROFILE}-depends
         echo "        siduction-settings-lightdm-gtk-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
         ;;
         *)
