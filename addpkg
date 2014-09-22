@@ -12,7 +12,7 @@ settings_version=$(echo $FLL_WALLPAPER | cut -d / -f 5)
 
 xorg_installed=$(dpkg -l | grep Xorg)
 
-if [ -n "${xorg_installed}" ]; then
+if [ -z "${xorg_installed}" ]; then
     dest_platform=nox
     else
     dest_platform=xorg
@@ -134,7 +134,7 @@ esac
     done < ${PKGDIR}/${PACK_PROFILE}-depends 
 
     for i in ${PKGDIR}/*-depfiles; do
-     awk '/^packages/,/^"""/' ${i} | grep -v '"""' | grep -v '#' | grep -v siduction-meta-xsiduction | grep -v cli-installer >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     awk '/^packages/,/^"""/' ${i} | grep -v '"""' | grep -v '#'  >> ${PKGDIR}/${PACK_PROFILE}-pkglist
     done
 
     # Removes temporary files
@@ -147,13 +147,11 @@ esac
     fi
 
 
-if [ "${dest_platform}" = "nox" ]; then
-    apt-get install --assume-yes siduction-meta-xsiduction
-    apt-get purge --assume-yes sidu-installer fll-installer fll-live-initscripts fll-live-utils siduction-meta-xdebian
-fi
-
 # install files
 apt-get install $(cat ${PKGDIR}/${PACK_PROFILE}-pkglist)
+
+# purge meta files
+apt-get purge --assume-yes siduction-meta-xorg siduction-meta-xsiduction siduction-meta-xdebian siduction-meta-mediabase
 
 # removes built package list 
 rm -f /usr/share/siduction-scripts/packages/${PACK_PROFILE}-pkglist

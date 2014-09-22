@@ -1,3 +1,10 @@
+siduction-scripts (2014.09.22) unstable; urgency=medium
+
+  * changes to addpkg due to last changes from siduction-meta-xorg and
+    siduction-live-settings
+
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Mon, 22 Sep 2014 04:10:08 +0300
+
 siduction-scripts (2014.09.21.1) unstable; urgency=medium
 
   * changes to addpkg when installing over nox
