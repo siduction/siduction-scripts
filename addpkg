@@ -80,7 +80,11 @@ if [ "$PACK_PROFILE" = "custom" ]; then
     fi
 else
 
-case ${settings_version} in 
+case ${settings_version} in
+     december)
+     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
+     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+     ;;
      whiteroom)
      echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
      echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
