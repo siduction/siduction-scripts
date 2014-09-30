@@ -3,7 +3,7 @@ burniso				usr/bin/
 fix-dpi-kdm			usr/sbin/
 fix-ssh				usr/sbin/
 fix-time			usr/sbin/
-packages/custom-pklist.ex	usr/share/siduction-scripts/packages/
+packages/custom.ex	usr/share/siduction-scripts/packages/
 fw				usr/share/siduction-scripts/
 fw-data.sh			usr/share/siduction-scripts/
 fw-detect			usr/bin/

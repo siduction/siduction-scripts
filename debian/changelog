@@ -1,3 +1,9 @@
+siduction-scripts (2014.09.30.1) unstable; urgency=medium
+
+  * fixed install
+
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Tue, 30 Sep 2014 23:07:48 +0300
+
 siduction-scripts (2014.09.30) unstable; urgency=medium
 
   * changes to addpkg to work also with december settings.
