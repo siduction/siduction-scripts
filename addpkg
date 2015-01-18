@@ -40,9 +40,6 @@ case $1 in
         mate)
         PACK_PROFILE=mate
         ;;
-        rqt)
-        PACK_PROFILE=rqt
-        ;;
         siducation-full)
         PACK_PROFILE=siducation-full
         ;;
@@ -80,35 +77,33 @@ if [ "$PACK_PROFILE" = "custom" ]; then
     fi
 else
 
-case ${settings_version} in
-     december)
-     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
-     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
-     ;;
-     whiteroom)
-     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
-     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
-     ;;
-     indiansummer)
-     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
-     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
-     #echo "        siduction-art-wallpaper-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
-     ;;
-     *)
-    echo "        siduction-settings-${PACK_PROFILE}-paintitblack" > ${PKGDIR}/${PACK_PROFILE}-pkglist
-    echo "        siduction-art-${PACK_PROFILE}-paintitblack" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
-    echo "        siduction-art-wallpaper-paintitblack" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
-     ;;
-esac
+# TODO settings
+#case ${settings_version} in
+#     december)
+#     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
+#     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+#     ;;
+#     indiansummer)
+#     echo "        siduction-settings-${PACK_PROFILE}-${settings_version}" > ${PKGDIR}/${PACK_PROFILE}-pkglist
+#     echo "        siduction-art-${PACK_PROFILE}-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+#     echo "        siduction-art-wallpaper-${settings_version}" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+#     ;;
+#     paintitblack)
+#     echo "        siduction-settings-${PACK_PROFILE}-paintitblack" > ${PKGDIR}/${PACK_PROFILE}-pkglist
+#      echo "        siduction-art-${PACK_PROFILE}-paintitblack" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+#     echo "        siduction-art-wallpaper-paintitblack" >> ${PKGDIR}/${PACK_PROFILE}-pkglist
+#     ;;
+#     *)
+#     echo " There aren't supported settings for ${PACK_PROFILE} until now"
+#     ;;
+#esac
 
-
-
-
-    # get using curl pyfll requested PACK_PROFILE or show a message for custom pkg list
-
-        echo "Fetching siduction ${PACK_PROFILE}  profile list."
+    # clone pyfll git and get requested PACK_PROFILE or show a message for custom pkg list
+        echo "\nCloning pyfll."
+        git clone http://git.siduction.org/r/base/pyfll.git /usr/share/siduction-scripts/clone
         sleep 2
-        curl -'#' -o  ${PKGDIR}/${PACK_PROFILE} http://bugs.siduction.org/projects/pyfll/repository/revisions/master/raw/pyfll/packages/$PACK_PROFILE
+        echo "\nFetching siduction ${PACK_PROFILE}  profile list."
+        cp /usr/share/siduction-scripts/clone/pyfll/packages/${PACK_PROFILE} ${PKGDIR}/${PACK_PROFILE}
 
     # Reads packages from packages profile
     awk '/^packages/,/^"""/' ${PKGDIR}/${PACK_PROFILE}  | grep -v '"""' | grep -v '#' >> ${PKGDIR}/${PACK_PROFILE}-pkglist
@@ -134,12 +129,13 @@ esac
 
     while read pkgdepends ; do
         echo "Fetching for ${PACK_PROFILE} profile $pkgdepends depend." 
-        curl -'#' -o ${PKGDIR}/$pkgdepends-depfiles http://bugs.siduction.org/projects/pyfll/repository/revisions/master/raw/pyfll/packages/packages.d/$pkgdepends
+        cp /usr/share/siduction-scripts/clone/pyfll/packages/packages.d/$pkgdepends ${PKGDIR}/$pkgdepends-depfiles 
     done < ${PKGDIR}/${PACK_PROFILE}-depends 
 
     for i in ${PKGDIR}/*-depfiles; do
      awk '/^packages/,/^"""/' ${i} | grep -v '"""' | grep -v '#'  >> ${PKGDIR}/${PACK_PROFILE}-pkglist
     done
+
 
     # Removes temporary files
     if [ -f ${PKGDIR}/${PACK_PROFILE}-pkglist ] ; then
@@ -157,12 +153,24 @@ apt-get install $(cat ${PKGDIR}/${PACK_PROFILE}-pkglist)
 # purge meta files
 apt-get purge --assume-yes siduction-meta-xorg siduction-meta-xsiduction siduction-meta-xdebian siduction-meta-mediabase
 
-# removes built package list 
+# removes built package list and pyfll git clone
 rm -f /usr/share/siduction-scripts/packages/${PACK_PROFILE}-pkglist
+rm -Rf /usr/share/siduction-scripts/clone
+
+# Settings message
+if [ "$PACK_PROFILE" = "custom" ]; then
+    echo "You should customize your's new added flavour."
+else
+    echo "\nYour's installed settings for existing flavours are ${settings_version}."
+    echo "Please add your's desired settings for ${PACK_PROFILE} if exists in siduction repos. \n"
+    echo "Otherwise you can try siduction-settings-${PACK_PROFILE}-paintitblack
+    siduction-art-${PACK_PROFILE}-paintitblack and siduction-art-wallpaper-paintitblack. \n"
+    sleep 2
+    fi
 }
 
 case "$1" in
-    cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|mate|rqt|siducation-full|siducation-lite|xfce)
+    cinnamon|custom|gnome|kde|plasma5|lxde|lxqt|mate|siducation-full|siducation-lite|xfce)
     AddPackages $1
     ;;
     *)
@@ -170,6 +178,3 @@ case "$1" in
         exit 1
     ;;
 esac
-
-
-

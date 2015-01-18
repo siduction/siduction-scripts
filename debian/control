@@ -16,7 +16,7 @@ Depends:
  perl,
  distro-defaults,
  wodim,
- curl,
+ git,
 Recommends:
  menu,
  ntpdate,

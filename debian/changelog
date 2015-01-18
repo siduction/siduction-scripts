@@ -1,3 +1,12 @@
+siduction-scripts (2015.01.18) unstable; urgency=medium
+
+  * removed settings secttion and added a message
+  * changed the way to fetch flavours packages lists (use git now instead of
+    curl)
+  * removed deprecated rqt profile
+
+ -- Angelescu Ovidiu <convbsd@siduction.org>  Sun, 18 Jan 2015 10:33:23 +0200
+
 siduction-scripts (2014.09.30.1) unstable; urgency=medium
 
   * fixed install
