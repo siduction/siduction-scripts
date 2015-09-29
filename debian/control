@@ -1,26 +1,23 @@
 Source: siduction-scripts
+Maintainer: Alf Gaida <agaida@siduction.org>
 Section: misc
 Priority: extra
-Maintainer: Alf Gaida <agaida@siduction.org>
-Build-Depends: 
- debhelper (>= 9),
- libconfig-tiny-perl,
-Standards-Version: 3.9.5
-Vcs-Git:git://git.siduction.org/code/siduction-scripts.git
+Build-Depends: debhelper (>= 9),
+               libconfig-tiny-perl
+Standards-Version: 3.9.6
 Vcs-Browser: http://git.siduction.org/?p=code/siduction-scripts.git;a=summary
+Vcs-Git: git://git.siduction.org/code/siduction-scripts.git
 
 Package: siduction-scripts
 Architecture: all
-Depends:
- ${misc:Depends},
- perl,
- distro-defaults,
- wodim,
- git,
-Recommends:
- menu,
- ntpdate,
- scrot,
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         distro-defaults,
+         wodim,
+         git
+Recommends: menu,
+            ntpdate,
+            scrot
 Description: miscellaneous scripts for siduction
  Script collection for live and install uses on siduction:
   * burniso (write an ISO image from cli)
@@ -32,7 +29,7 @@ Description: miscellaneous scripts for siduction
   * inetconn (check if an internet connection is active)
   * remove-gateway (remove configured gateways from /etc/network/interfaces)
   * remove-orphans (purge files which were merely removed)
-  * siduction-paste (paste cli output, text files, images and screenshots to 
+  * siduction-paste (paste cli output, text files, images and screenshots to
     our pastebin)
   * addpkg add a $flavour package list to an installed system must be called as
     addpkg $flavour
