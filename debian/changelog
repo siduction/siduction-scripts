@@ -1,3 +1,11 @@
+siduction-scripts (2016.04.18) unstable; urgency=medium
+
+  * some external cleanup 
+  * VCS-Fields fixed
+  * bump standards to 3.9.7
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 18 Apr 2016 02:30:56 +0200
+
 siduction-scripts (2015.09.29) unstable; urgency=medium
 
   * use current standards
