@@ -4,24 +4,27 @@ set -e
 
 case "$1" in
     install|upgrade)
-        rm -rf /usr/share/sidu-installer
-
-        rm -f /usr/share/sidu-base/scripts/checkupdate.py
-        rm -f /usr/share/sidu-base/scripts/packetupdate.py
-
-        rm -f /usr/share/sidu-base/backend/automount-control.sh
-        rm -f /usr/share/sidu-base/backend/install.sh
-        rm -f /usr/share/sidu-base/backend/partinfo.pl
-        rm -f /usr/share/sidu-base/backend/partinfo.sh
-        rm -f /usr/share/sidu-base/backend/timezoneinfo.sh
-        rm -f /usr/share/sidu-base/backend/firmware.sh
-        rm -f /usr/share/sidu-base/backend/firmware.pl
-        rm -f /usr/share/sidu-base/backend/nonfree.sh
-        rm -f /usr/share/sidu-base/backend/autopart.sh
-        rm -f /usr/share/sidu-base/backend/autopart.pl
-
-        rm -rf /var/cache/sidu-base/*
-        [ -d /var/cache/sidu-base ] && mkdir -p /var/cache/sidu-base/public
+        if [ ! -f usr/bin/sidu-control ]; then
+            rm -rf /etc/sidu-base
+            rm -rf /usr/share/sidu-base
+            rm -rf /var/cache/sidu-base
+        else
+            rm -rf /usr/share/sidu-installer
+            rm -f /usr/share/sidu-base/scripts/checkupdate.py
+            rm -f /usr/share/sidu-base/scripts/packetupdate.py
+            rm -f /usr/share/sidu-base/backend/automount-control.sh
+            rm -f /usr/share/sidu-base/backend/install.sh
+            rm -f /usr/share/sidu-base/backend/partinfo.pl
+            rm -f /usr/share/sidu-base/backend/partinfo.sh
+            rm -f /usr/share/sidu-base/backend/timezoneinfo.sh
+            rm -f /usr/share/sidu-base/backend/firmware.sh
+            rm -f /usr/share/sidu-base/backend/firmware.pl
+            rm -f /usr/share/sidu-base/backend/nonfree.sh
+            rm -f /usr/share/sidu-base/backend/autopart.sh
+            rm -f /usr/share/sidu-base/backend/autopart.pl
+            rm -rf /var/cache/sidu-base/*
+            [ -d /var/cache/sidu-base ] && mkdir -p /var/cache/sidu-base/public
+        fi
     ;;
 
     abort-upgrade)
