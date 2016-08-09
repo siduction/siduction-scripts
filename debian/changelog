@@ -1,3 +1,12 @@
+siduction-scripts (2016.08.08) unstable; urgency=medium
+
+  * update addpkg with new git url (go git service)
+    and beautify the cleanup procedure
+  * remove ntpdate from recommends
+  * add myself to Uploaders
+
+ -- Jens Theede <musca@siduction.org>  Tue, 09 Aug 2016 17:14:44 +0200
+
 siduction-scripts (2016.04.19) unstable; urgency=medium
 
   * external cleanup fixed, check for file, not for directory

@@ -1,5 +1,6 @@
 Source: siduction-scripts
 Maintainer: Alf Gaida <agaida@siduction.org>
+Uploaders: Jens Theede <musca@siduction.org>
 Section: misc
 Priority: extra
 Build-Depends: debhelper (>= 9),
@@ -16,7 +17,6 @@ Depends: ${misc:Depends},
          wodim,
          git
 Recommends: menu,
-            ntpdate,
             scrot
 Description: miscellaneous scripts for siduction
  Script collection for live and install uses on siduction:
@@ -31,5 +31,4 @@ Description: miscellaneous scripts for siduction
  * remove-orphans (purge files which were merely removed)
  * siduction-paste (paste cli output, text files, images and screenshots to
    our pastebin)
- * addpkg add a $flavour package list to an installed system must be called as
-   addpkg $flavour
+ * addpkg $flavour (will add its package list to an installed system)
