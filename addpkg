@@ -2,7 +2,9 @@
 
 AddPackages()
 {
-PKGDIR=/usr/share/siduction-scripts/packages
+PKGDIR="/usr/share/siduction-scripts/packages"
+PKGSRC_LOCAL="/usr/share/siduction-scripts/clone"
+PKGSRC_REMOTE="http://git.siduction.org/extra/pyfll.git"
 
 if [ -e /etc/default/distro ]; then
     . /etc/default/distro
@@ -99,11 +101,14 @@ else
 #esac
 
     # clone pyfll git and get requested PACK_PROFILE or show a message for custom pkg list
+    # TODO - (done) switch hardcoded URL and DIR to variables PKGSRC_REMOTE PKGSRC_LOCAL
+    #      -        cleanup 3 comment lines after successful test
         echo "\nCloning pyfll."
-        git clone http://git.siduction.org/r/base/pyfll.git /usr/share/siduction-scripts/clone
+        # git clone http://git.siduction.org/r/base/pyfll.git /usr/share/siduction-scripts/clone
+        git clone "${PKGSRC_REMOTE}" "${PKGSRC_LOCAL}"
         sleep 2
         echo "\nFetching siduction ${PACK_PROFILE}  profile list."
-        cp /usr/share/siduction-scripts/clone/pyfll/packages/${PACK_PROFILE} ${PKGDIR}/${PACK_PROFILE}
+        cp "${PKGSRC_LOCAL}/pyfll/packages/${PACK_PROFILE}" "${PKGDIR}/${PACK_PROFILE}"
 
     # Reads packages from packages profile
     awk '/^packages/,/^"""/' ${PKGDIR}/${PACK_PROFILE}  | grep -v '"""' | grep -v '#' >> ${PKGDIR}/${PACK_PROFILE}-pkglist
@@ -129,7 +134,7 @@ else
 
     while read pkgdepends ; do
         echo "Fetching for ${PACK_PROFILE} profile $pkgdepends depend." 
-        cp /usr/share/siduction-scripts/clone/pyfll/packages/packages.d/$pkgdepends ${PKGDIR}/$pkgdepends-depfiles 
+        cp "${PKGSRC_LOCAL}/pyfll/packages/packages.d/$pkgdepends" "${PKGDIR}/$pkgdepends-depfiles" 
     done < ${PKGDIR}/${PACK_PROFILE}-depends 
 
     for i in ${PKGDIR}/*-depfiles; do
@@ -151,17 +156,24 @@ else
 apt-get install $(cat ${PKGDIR}/${PACK_PROFILE}-pkglist)
 
 # purge meta files
-apt-get purge --assume-yes siduction-meta-xorg siduction-meta-xsiduction siduction-meta-xdebian siduction-meta-mediabase
+# apt-get purge --assume-yes siduction-meta-xorg siduction-meta-xsiduction siduction-meta-xdebian siduction-meta-mediabase
+purgelist="$(dpkg -l | awk '/siduction-meta/ {print $2}')"
+if [ -z "${purgelist}" ] ; then
+    printf "%s\n" "Nothing to purge!"
+else
+    printf "%s\n" "Now purging meta packages; ${purgelist}"
+    apt-get purge --assume-yes "${purgelist}"
+fi
 
 # removes built package list and pyfll git clone
 rm -f /usr/share/siduction-scripts/packages/${PACK_PROFILE}-pkglist
-rm -Rf /usr/share/siduction-scripts/clone
+rm -Rf "${PKGSRC_LOCAL}"
 
 # Settings message
 if [ "$PACK_PROFILE" = "custom" ]; then
     echo "You should customize your's new added flavour."
 else
-    echo "\nYour's installed settings for existing flavours are ${settings_version}."
+    echo "\nYour installed settings for existing flavours are ${settings_version}."
     echo "Please add your's desired settings for ${PACK_PROFILE} if exists in siduction repos. \n"
     echo "Otherwise you can try siduction-settings-${PACK_PROFILE}-paintitblack
     siduction-art-${PACK_PROFILE}-paintitblack and siduction-art-wallpaper-paintitblack. \n"
