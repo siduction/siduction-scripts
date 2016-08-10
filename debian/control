@@ -23,7 +23,6 @@ Description: miscellaneous scripts for siduction
  * burniso (write an ISO image from cli)
  * fix-dpi-kdm (tweak dpi settings for kdm/ KDE)
  * fix-ssh (generate ssh host keys, which are missing on the live system)
- * fix-time (configure timezone and sync time via ntp)
  * fw-detect (identify missing firmware for installed hardware)
  * get-resume-partition (configure a resume (swap) partition based on UUIDs)
  * inetconn (check if an internet connection is active)

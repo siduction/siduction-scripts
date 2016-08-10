@@ -69,13 +69,13 @@ if [ "$PACK_PROFILE" = "custom" ]; then
         echo '######################################################'
         exit 1
     else
-    # moves custom pkg list to custom-pklist.orig and show a message about it
-    echo '######################################################'
-    echo "Cpying custom pkglist  to custom.orig"
-    echo "If you don't need it anymore you should remove it."
-    echo '######################################################'
-    awk '/^packages/,/^"""/' ${PKGDIR}/${PACK_PROFILE}  | grep -v '"""' | grep -v '#' > ${PKGDIR}/${PACK_PROFILE}-pkglist
-    cp ${PKGDIR}/$PACK_PROFILE ${PKGDIR}/${PACK_PROFILE}.orig
+	# moves custom pkg list to custom-pklist.orig and show a message about it
+	echo '######################################################'
+	echo "Cpying custom pkglist  to custom.orig"
+	echo "If you don't need it anymore you should remove it."
+	echo '######################################################'
+	awk '/^packages/,/^"""/' ${PKGDIR}/${PACK_PROFILE}  | grep -v '"""' | grep -v '#' > ${PKGDIR}/${PACK_PROFILE}-pkglist
+	cp ${PKGDIR}/$PACK_PROFILE ${PKGDIR}/${PACK_PROFILE}.orig
     fi
 else
 
@@ -101,14 +101,11 @@ else
 #esac
 
     # clone pyfll git and get requested PACK_PROFILE or show a message for custom pkg list
-    # TODO - (done) switch hardcoded URL and DIR to variables PKGSRC_REMOTE PKGSRC_LOCAL
-    #      -        cleanup 3 comment lines after successful test
-        echo "\nCloning pyfll."
-        # git clone http://git.siduction.org/r/base/pyfll.git /usr/share/siduction-scripts/clone
-        git clone "${PKGSRC_REMOTE}" "${PKGSRC_LOCAL}"
-        sleep 2
-        echo "\nFetching siduction ${PACK_PROFILE}  profile list."
-        cp "${PKGSRC_LOCAL}/pyfll/packages/${PACK_PROFILE}" "${PKGDIR}/${PACK_PROFILE}"
+    echo "\nCloning pyfll."
+    git clone "${PKGSRC_REMOTE}" "${PKGSRC_LOCAL}"
+    sleep 2
+    echo "\nFetching siduction ${PACK_PROFILE}  profile list."
+    cp "${PKGSRC_LOCAL}/pyfll/packages/${PACK_PROFILE}" "${PKGDIR}/${PACK_PROFILE}"
 
     # Reads packages from packages profile
     awk '/^packages/,/^"""/' ${PKGDIR}/${PACK_PROFILE}  | grep -v '"""' | grep -v '#' >> ${PKGDIR}/${PACK_PROFILE}-pkglist
@@ -149,19 +146,19 @@ else
     fi
 
  
-    fi
+fi
 
 
 # install files
 apt-get install $(cat ${PKGDIR}/${PACK_PROFILE}-pkglist)
 
 # purge meta files
-# apt-get purge --assume-yes siduction-meta-xorg siduction-meta-xsiduction siduction-meta-xdebian siduction-meta-mediabase
+# originally a hard-coded list: siduction-meta-xorg siduction-meta-xsiduction siduction-meta-xdebian siduction-meta-mediabase
 purgelist="$(dpkg -l | awk '/siduction-meta/ {print $2}')"
 if [ -z "${purgelist}" ] ; then
     printf "%s\n" "Nothing to purge!"
 else
-    printf "%s\n" "Now purging meta packages; ${purgelist}"
+    printf "%s\n" "Now purging meta packages: ${purgelist}"
     apt-get purge --assume-yes "${purgelist}"
 fi
 
@@ -174,7 +171,7 @@ if [ "$PACK_PROFILE" = "custom" ]; then
     echo "You should customize your's new added flavour."
 else
     echo "\nYour installed settings for existing flavours are ${settings_version}."
-    echo "Please add your's desired settings for ${PACK_PROFILE} if exists in siduction repos. \n"
+    echo "Please add your desired settings for ${PACK_PROFILE} if exists in siduction repos. \n"
     echo "Otherwise you can try siduction-settings-${PACK_PROFILE}-paintitblack
     siduction-art-${PACK_PROFILE}-paintitblack and siduction-art-wallpaper-paintitblack. \n"
     sleep 2
