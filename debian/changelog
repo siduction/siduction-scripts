@@ -1,8 +1,8 @@
-siduction-scripts (2016.08.11) UNRELEASED; urgency=medium
+siduction-scripts (2016.08.30) unstable; urgency=medium
 
   * clone https://git.s.o in addpkg
 
- -- Jens Theede <musca@siduction.org>  Tue, 30 Aug 2016 22:41:49 +0200
+ -- Jens Theede <musca@siduction.org>  Tue, 30 Aug 2016 22:43:51 +0200
 
 siduction-scripts (2016.08.10) unstable; urgency=medium
 
