@@ -31,3 +31,4 @@ Description: miscellaneous scripts for siduction
  * siduction-paste (paste cli output, text files, images and screenshots to
    our pastebin)
  * addpkg $flavour (will add its package list to an installed system)
+ * fix-xkbmap will sync system locale with xkbmap when out of sync
