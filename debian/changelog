@@ -1,3 +1,9 @@
+siduction-scripts (2017.01.29) unstable; urgency=medium
+
+  * added fix-xkbmap to siduction-scripts
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 29 Jan 2017 18:33:24 +0100
+
 siduction-scripts (2016.04.19) unstable; urgency=medium
 
   * external cleanup fixed, check for file, not for directory

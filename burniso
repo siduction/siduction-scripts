@@ -3,7 +3,21 @@
 # Burn ISO images from the command line.
 # see "man burniso"
 
-# wodim parameters
+# Copyright (C) 2009, Michael Deelwater <michael.deelwater@googlemail.com>
+# Copyright (C) 2010, Joaquim Boura <x-un-i@sapo.pt>
+# Copyright (C) 2011-2015, Stefan Lippers-Hollmann <s.l-h@gmx.de>
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2 of the
+# License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# xorriso parameters
 SPEED="8"
 FS="14M"
 OPTIONS="-dao -eject -v"
@@ -72,4 +86,6 @@ if [ -f "${iso}.md5" ]; then
 		error "Invalid MD5 checksum!"
 	fi
 fi
-exec wodim ${OPTIONS} "dev=${device}" "fs=${FS}" "speed=${SPEED}" "${iso}"
+
+# burn baby, burn
+exec xorriso -as cdrecord ${OPTIONS} "dev=${device}" "fs=${FS}" "speed=${SPEED}" "${iso}"

@@ -4,7 +4,7 @@ Section: misc
 Priority: extra
 Build-Depends: debhelper (>= 9),
                libconfig-tiny-perl
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Vcs-Browser: http://git.siduction.org/summary/base!siduction-scripts.git 
 Vcs-Git: http://git.siduction.org/r/base/siduction-scripts.git
 
@@ -13,7 +13,7 @@ Architecture: all
 Depends: ${misc:Depends},
          ${perl:Depends},
          distro-defaults,
-         wodim,
+         xorriso,
          git
 Recommends: menu,
             ntpdate,

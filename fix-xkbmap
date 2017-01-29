@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Copyright: 2017 Alf Gaida <agaida@siduction.org>
+# License: WTFPL-2
+#
+#  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+xkbmap=$(setxkbmap -query | grep layout | awk -F':' '{print $2}')
+locale=$(localectl | grep 'X11 Layout' | awk -F':' '{print $2}')
+if [ "$xkbmap" != "$locale" ]; then
+    setxkbmap $locale;
+fi
+

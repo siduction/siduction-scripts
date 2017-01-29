@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=fix-xkbmap
+Name=FixXKBMap
+Type=Application
+X-DBUS-StartupType=Unique
