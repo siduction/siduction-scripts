@@ -1,5 +1,6 @@
 Source: siduction-scripts
 Maintainer: Alf Gaida <agaida@siduction.org>
+Uploaders: Jens Theede <musca@siduction.org>
 Section: misc
 Priority: extra
 Build-Depends: debhelper (>= 9),
@@ -16,14 +17,12 @@ Depends: ${misc:Depends},
          xorriso,
          git
 Recommends: menu,
-            ntpdate,
             scrot
 Description: miscellaneous scripts for siduction
  Script collection for live and install uses on siduction:
  * burniso (write an ISO image from cli)
  * fix-dpi-kdm (tweak dpi settings for kdm/ KDE)
  * fix-ssh (generate ssh host keys, which are missing on the live system)
- * fix-time (configure timezone and sync time via ntp)
  * fw-detect (identify missing firmware for installed hardware)
  * get-resume-partition (configure a resume (swap) partition based on UUIDs)
  * inetconn (check if an internet connection is active)
@@ -31,5 +30,4 @@ Description: miscellaneous scripts for siduction
  * remove-orphans (purge files which were merely removed)
  * siduction-paste (paste cli output, text files, images and screenshots to
    our pastebin)
- * addpkg add a $flavour package list to an installed system must be called as
-   addpkg $flavour
+ * addpkg $flavour (will add its package list to an installed system)

@@ -4,6 +4,29 @@ siduction-scripts (2017.01.29) unstable; urgency=medium
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 29 Jan 2017 18:33:24 +0100
 
+
+siduction-scripts (2016.08.30) unstable; urgency=medium
+
+  * clone https://git.s.o in addpkg
+
+ -- Jens Theede <musca@siduction.org>  Tue, 30 Aug 2016 22:43:51 +0200
+
+siduction-scripts (2016.08.10) unstable; urgency=medium
+
+  * abandon the fix-time script, which was based on ntpdate.
+  * cleanup addpkg comments and indention
+
+ -- Jens Theede <musca@siduction.org>  Thu, 11 Aug 2016 01:36:05 +0200
+
+siduction-scripts (2016.08.08) unstable; urgency=medium
+
+  * update addpkg with new git url (go git service)
+    and beautify the cleanup procedure
+  * remove ntpdate from recommends
+  * add myself to Uploaders
+
+ -- Jens Theede <musca@siduction.org>  Tue, 09 Aug 2016 17:14:44 +0200
+
 siduction-scripts (2016.04.19) unstable; urgency=medium
 
   * external cleanup fixed, check for file, not for directory
