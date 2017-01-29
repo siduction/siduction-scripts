@@ -1,16 +1,11 @@
 addpkg				usr/sbin/
 burniso				usr/bin/
-fix-dpi-kdm          usr/sbin/
-fix-ssh              usr/sbin/
 packages/custom.ex   usr/share/siduction-scripts/packages/
 fw				usr/share/siduction-scripts/
 fw-data.sh			usr/share/siduction-scripts/
 fw-detect			usr/bin/
 update-resume-partition		usr/sbin/
-inetconn             usr/bin/
 live                 usr/sbin/
-remove-gateway       usr/sbin/
-remove-orphans       usr/sbin/
 siduction-paste      usr/bin/
 wgetpaste            usr/bin/
 

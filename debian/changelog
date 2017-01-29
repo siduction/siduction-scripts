@@ -1,3 +1,17 @@
+siduction-scripts (2017.01.31) unstable; urgency=medium
+
+  * ask if localectl and setxkbmap exists - if not exit silently
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 29 Jan 2017 19:30:39 +0100
+
+siduction-scripts (2017.01.30) unstable; urgency=medium
+
+  * Added lintian overrides
+  * d/control fixed list
+  * fixed copyrights
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 29 Jan 2017 19:03:18 +0100
+
 siduction-scripts (2017.01.29) unstable; urgency=medium
 
   * added fix-xkbmap to siduction-scripts

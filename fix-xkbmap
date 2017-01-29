@@ -5,6 +5,9 @@
 #
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 
+[ ! -f /usr/bin/setxkbmap ] && exit 0
+[ ! -f /usr/bin/localectl ] && exit 0
+
 xkbmap=$(setxkbmap -query | grep layout | awk -F':' '{print $2}')
 locale=$(localectl | grep 'X11 Layout' | awk -F':' '{print $2}')
 if [ "$xkbmap" != "$locale" ]; then

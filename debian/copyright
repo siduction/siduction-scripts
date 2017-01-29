@@ -4,21 +4,26 @@ Upstream-Contact: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Source: git://github.com/fullstory/aptosid-scripts.git
 
 Files: *
-Copyright: 2004-2015, Stefan Lippers-Hollmann <s.l-h@gmx.de>
-           2005-2008, Kel Modderman <kel@otaku42.de>
-           2008, Horst Tritremmel <peter_weber69@gmx.at>
-           2008-2010, Joaquim Boura <x-un-i@sapo.pt>
-           2009-2013, Niall Walsh <niallwalsh@celtux.org>
+Copyright: 2004-2015 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+           2005-2008 Kel Modderman <kel@otaku42.de>
+           2008      Horst Tritremmel <peter_weber69@gmx.at>
+           2008-2010 Joaquim Boura <x-un-i@sapo.pt>
+           2009-2013 Niall Walsh <niallwalsh@celtux.org>
 License: GPL-2.0
 
-Files: siduction-paste: 
-           2011      Markus Meyer <coruja@siduction.org>
+Files: fix-xkbmap fix-xkbmap.desktop
+Copyright: 2017     Alf Gaida <agaida@siduction.org>
+License: WTFPL-2
+
+Files: siduction-paste 
+Copyright: 2011      Markus Meyer <coruja@siduction.org>
+License: GPL-2.0
 
 Files: burniso
        burniso.1
-Copyright: 2009, Michael Deelwater <michael.deelwater@googlemail.com>
-           2010, Joaquim Boura <x-un-i@sapo.pt>
-           2011-2015, Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Copyright: 2009      Michael Deelwater <michael.deelwater@googlemail.com>
+           2010      Joaquim Boura <x-un-i@sapo.pt>
+           2011-2015 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 License: GPL-2.0
 
 License: GPL-2.0
@@ -36,3 +41,18 @@ License: GPL-2.0
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: WTFPL-2
+ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+ Version 2, December 2004
+ .
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+ .
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+ .
+ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+ .
+ 0. You just DO WHAT THE FUCK YOU WANT TO.

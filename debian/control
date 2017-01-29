@@ -20,15 +20,15 @@ Recommends: menu,
             scrot
 Description: miscellaneous scripts for siduction
  Script collection for live and install uses on siduction:
- * burniso (write an ISO image from cli)
- * fix-dpi-kdm (tweak dpi settings for kdm/ KDE)
- * fix-ssh (generate ssh host keys, which are missing on the live system)
- * fw-detect (identify missing firmware for installed hardware)
- * get-resume-partition (configure a resume (swap) partition based on UUIDs)
- * inetconn (check if an internet connection is active)
- * remove-gateway (remove configured gateways from /etc/network/interfaces)
- * remove-orphans (purge files which were merely removed)
- * siduction-paste (paste cli output, text files, images and screenshots to
-   our pastebin)
- * addpkg $flavour (will add its package list to an installed system)
- * fix-xkbmap will sync system locale with xkbmap when out of sync
+   * burniso (write an ISO image from cli)
+   * fix-dpi-kdm (tweak dpi settings for kdm/ KDE)
+   * fix-ssh (generate ssh host keys, which are missing on the live system)
+   * fw-detect (identify missing firmware for installed hardware)
+   * get-resume-partition (configure a resume (swap) partition based on UUIDs)
+   * inetconn (check if an internet connection is active)
+   * remove-gateway (remove configured gateways from /etc/network/interfaces)
+   * remove-orphans (purge files which were merely removed)
+   * siduction-paste (paste cli output, text files, images and screenshots to
+     our pastebin)
+   * addpkg $flavour (will add its package list to an installed system)
+   * fix-xkbmap will sync system locale with xkbmap when out of sync
