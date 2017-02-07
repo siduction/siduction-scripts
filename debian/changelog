@@ -1,3 +1,10 @@
+siduction-scripts (2017.02.07) unstable; urgency=medium
+
+  * only run fix-xkbmap on the first start
+  * fixes #1921 - don't take the gatling ...
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 07 Feb 2017 22:38:28 +0100
+
 siduction-scripts (2017.01.31) unstable; urgency=medium
 
   * ask if localectl and setxkbmap exists - if not exit silently

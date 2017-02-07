@@ -11,6 +11,9 @@
 xkbmap=$(setxkbmap -query | grep layout | awk -F':' '{print $2}')
 locale=$(localectl | grep 'X11 Layout' | awk -F':' '{print $2}')
 if [ "$xkbmap" != "$locale" ]; then
-    setxkbmap $locale;
+    if [ ! -f "$HOME/.config/xkbfirstrun" ]; then
+         setxkbmap $locale;
+         touch  "$HOME/.config/xkbfirstrun"
+    fi
 fi
 

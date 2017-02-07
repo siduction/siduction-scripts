@@ -1,4 +1,5 @@
 [Desktop Entry]
+TryExec=fix-xkbmap
 Exec=fix-xkbmap
 Name=FixXKBMap
 Type=Application

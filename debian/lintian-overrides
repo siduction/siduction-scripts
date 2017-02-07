@@ -1,0 +1,6 @@
+siduction-scripts: binary-without-manpage usr/sbin/addpkg
+siduction-scripts: binary-without-manpage usr/bin/fix-xkbmap
+siduction-scripts: binary-without-manpage usr/sbin/live
+siduction-scripts: binary-without-manpage usr/bin/siduction-paste
+siduction-scripts: binary-without-manpage usr/bin/wgetpaste
+
