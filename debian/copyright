@@ -11,7 +11,9 @@ Copyright: 2004-2015 Stefan Lippers-Hollmann <s.l-h@gmx.de>
            2009-2013 Niall Walsh <niallwalsh@celtux.org>
 License: GPL-2.0
 
-Files: fix-xkbmap fix-xkbmap.desktop
+Files: fix-xkbmap
+       fix-xkbmap.desktop
+       remove-nonfree
 Copyright: 2017     Alf Gaida <agaida@siduction.org>
 License: WTFPL-2
 

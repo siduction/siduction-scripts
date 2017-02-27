@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# Copyright: 2017 Alf Gaida <agaida@siduction.org>
+# License: WTFPL-2
+#
+#  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+help() {
+    echo "========================================================"
+    echo "=                                                      ="
+    echo "= WARNING                                              ="
+    echo "=                                                      ="
+    echo "= This script will cripple your installation and will  ="
+    echo "= cause serious headaches. You are warned.             ="
+    echo "=                                                      ="
+    echo "========================================================"
+}
+
+usage() {
+    echo "remove-nonfree [options]"
+    echo ""
+    echo "Options:"
+    echo "    --help, -h   this screen"
+    echo "    --show, -s   show things to touch"
+}
+
+# implement optargs
+# TODO
+
+
+pkglist=$(vrms -s -q)
+
+for i in $pkglist; do
+    apt purge $i --assume-yes || true
+done
+
+for i in /etc/apt/sources.list.d/*; do
+    sed -i 's#contrib##g' $i
+    sed -i 's#non-free##g' $i
+done
+
+vrms
+

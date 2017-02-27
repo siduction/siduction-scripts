@@ -1,3 +1,9 @@
+siduction-scripts (2017.02.08) unstable; urgency=medium
+
+  * added an early remove-nonfree 
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 27 Feb 2017 23:00:43 +0100
+
 siduction-scripts (2017.02.07) unstable; urgency=medium
 
   * only run fix-xkbmap on the first start
