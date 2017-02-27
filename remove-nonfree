@@ -8,10 +8,10 @@
 help() {
     echo "========================================================"
     echo "=                                                      ="
-    echo "= WARNING                                              ="
-    echo "=                                                      ="
-    echo "= This script will cripple your installation and will  ="
-    echo "= cause serious headaches. You are warned.             ="
+    echo "= WARNING:                                             ="
+    echo "= This script makes your install DFSG compliant.       ="
+    echo "= Running it might on the otrher hand lead to a        ="
+    echo "= not working wifi or problems with your AMD card.     ="
     echo "=                                                      ="
     echo "========================================================"
 }
