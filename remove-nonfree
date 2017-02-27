@@ -10,7 +10,7 @@ help() {
     echo "=                                                      ="
     echo "= WARNING:                                             ="
     echo "= This script makes your install DFSG compliant.       ="
-    echo "= Running it might on the otrher hand lead to a        ="
+    echo "= Running it might on the other hand lead to a        ="
     echo "= not working wifi or problems with your AMD card.     ="
     echo "=                                                      ="
     echo "========================================================"
