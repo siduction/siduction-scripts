@@ -17,10 +17,6 @@ Files: fix-xkbmap
 Copyright: 2017     Alf Gaida <agaida@siduction.org>
 License: WTFPL-2
 
-Files: siduction-paste 
-Copyright: 2011      Markus Meyer <coruja@siduction.org>
-License: GPL-2.0
-
 Files: burniso
        burniso.1
 Copyright: 2009      Michael Deelwater <michael.deelwater@googlemail.com>

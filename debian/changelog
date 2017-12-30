@@ -1,3 +1,12 @@
+siduction-scripts (2018.1.0) unstable; urgency=medium
+
+  * link siduction-paste to simple-paste
+  * Added simple-paste as recommend
+  * Bump Standards to 4.1.3
+  * Bump compat to 11
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 30 Dec 2017 17:39:08 +0100
+
 siduction-scripts (2017.02.10) unstable; urgency=medium
 
   * ready to release
