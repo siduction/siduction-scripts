@@ -7,7 +7,6 @@ fw-detect                  usr/bin/
 remove-nonfree             usr/sbin/
 update-resume-partition	   usr/sbin/
 live                       usr/sbin/
-siduction-paste            usr/bin/
 wgetpaste                  usr/bin/
 
 fix-xkbmap                 usr/bin

@@ -1,3 +1,9 @@
+siduction-scripts (2018.1.2) unstable; urgency=medium
+
+  * fixed debian/install 
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 30 Dec 2017 17:59:01 +0100
+
 siduction-scripts (2018.1.1) unstable; urgency=medium
 
   * fix link,  wrong order 
