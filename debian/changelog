@@ -1,8 +1,8 @@
-siduction-scripts (2018.1.2) unstable; urgency=medium
+siduction-scripts (2021-06-14) unstable; urgency=medium
 
-  * fixed debian/install 
+  * new Git url + ssl
 
- -- Alf Gaida <agaida@siduction.org>  Sat, 30 Dec 2017 17:59:01 +0100
+ -- Vinzenz Vietzke <vinz@vinzv.de>  Mon, 14 Jun 2021 20:54:39 +0200
 
 siduction-scripts (2018.1.1) unstable; urgency=medium
 
