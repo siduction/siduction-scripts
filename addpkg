@@ -4,7 +4,7 @@ AddPackages()
 {
 PKGDIR="/usr/share/siduction-scripts/packages"
 PKGSRC_LOCAL="/usr/share/siduction-scripts/clone"
-PKGSRC_REMOTE="https://git.siduction.org/extra/pyfll.git"
+PKGSRC_REMOTE="https://github.com/siduction/pyfll.git"
 
 if [ -e /etc/default/distro ]; then
     . /etc/default/distro
