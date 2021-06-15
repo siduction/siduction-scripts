@@ -1,8 +1,12 @@
 siduction-scripts (2021-06-14) unstable; urgency=medium
 
+  [ Vinzenz Vietzke ]
   * new Git url + ssl
 
- -- Vinzenz Vietzke <vinz@vinzv.de>  Mon, 14 Jun 2021 20:54:39 +0200
+  [ Torsten Wohlfarth ]
+  * package the changes
+
+ -- Torsten Wohlfarth <towo@siduction.org>  Tue, 15 Jun 2021 08:34:36 +0200
 
 siduction-scripts (2018.1.1) unstable; urgency=medium
 
