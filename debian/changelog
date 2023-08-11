@@ -1,3 +1,10 @@
+siduction-scripts (2023-08-11) unstable; urgency=medium
+
+  [ Axel Konrad ]
+  * add xfce_icon_add_attrib.sh
+
+ -- Torsten Wohlfarth <towo@siduction.org>  Fri, 11 Aug 2023 10:42:58 +0200
+
 siduction-scripts (2021-06-14) unstable; urgency=medium
 
   [ Vinzenz Vietzke ]
