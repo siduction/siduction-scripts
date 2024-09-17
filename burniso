@@ -80,7 +80,17 @@ fi
 printf "File %s chosen.\n" "${iso}"
 
 # Look for MD5 checksum and validate if available.
-if [ -f "${iso}.md5" ]; then
+if [ -f "${iso}.sha512" ]; then
+	echo "SHA512 checksum found. Verifying ISO..."
+	if ! sha512sum -c "${iso}.sha512"; then
+		error "Invalid SHA512 checksum!"
+	fi
+elif [ -f "${iso}.sha256" ]; then
+	echo "SHA256 checksum found. Verifying ISO..."
+	if ! sha256sum -c "${iso}.sha256"; then
+		error "Invalid SHA256 checksum!"
+	fi
+elif [ -f "${iso}.md5" ]; then
 	echo "MD5 checksum found. Verifying ISO..."
 	if ! md5sum -c "${iso}.md5"; then
 		error "Invalid MD5 checksum!"
