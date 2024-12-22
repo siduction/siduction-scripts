@@ -1,3 +1,9 @@
+siduction-scripts (2024-12-22) unstable; urgency=medium
+
+  * try to fix desktop for xfrce4
+
+ -- Torsten Wohlfarth <towo@siduction.org>  Sun, 22 Dec 2024 17:59:22 +0100
+
 siduction-scripts (2023-08-11) unstable; urgency=medium
 
   [ Axel Konrad ]
