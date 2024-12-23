@@ -1,3 +1,9 @@
+siduction-scripts (2024-12-23.1) unstable; urgency=medium
+
+  * set siduction-logo for whisker menu
+
+ -- Torsten Wohlfarth <towo@siduction.org>  Mon, 23 Dec 2024 15:41:31 +0100
+
 siduction-scripts (2024-12-23) unstable; urgency=medium
 
   * fix wallpaper for xfce

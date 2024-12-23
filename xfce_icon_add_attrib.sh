@@ -14,6 +14,7 @@ xfconf-query -c xfce4-desktop -p /backdrop/single-workspace-mode -s true --creat
 xfconf-query -c xfce4-desktop -p /backdrop/single-workspace-number -s 0 --create -t int
 xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -s false --create -t bool 
 xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-removable -s false --create -t bool
+xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s siduction -t string --create
 
 rm /home/${USER}/.config/autostart/Metadata.desktop
 exit 0
