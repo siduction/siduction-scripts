@@ -1,3 +1,9 @@
+siduction-scripts (2024-12-23) unstable; urgency=medium
+
+  * fix wallpaper for xfce
+
+ -- Torsten Wohlfarth <towo@siduction.org>  Mon, 23 Dec 2024 15:01:17 +0100
+
 siduction-scripts (2024-12-22) unstable; urgency=medium
 
   * try to fix desktop for xfrce4
