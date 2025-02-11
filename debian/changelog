@@ -1,5 +1,12 @@
 siduction-scripts (2024-12-23.1) unstable; urgency=medium
 
+  [ Axel Konrad ]
+  * xfce desktop config moved to siduction-xfce
+
+ -- Torsten Wohlfarth <towo@siduction.org>  Tue, 11 Feb 2025 14:10:00 +0100
+
+siduction-scripts (2024-12-23.1) unstable; urgency=medium
+
   * set siduction-logo for whisker menu
 
  -- Torsten Wohlfarth <towo@siduction.org>  Mon, 23 Dec 2024 15:41:31 +0100
