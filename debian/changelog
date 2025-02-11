@@ -1,9 +1,9 @@
-siduction-scripts (2024-12-23.1) unstable; urgency=medium
+siduction-scripts (2025-02-11) unstable; urgency=medium
 
   [ Axel Konrad ]
-  * xfce desktop config moved to siduction-xfce
+  * xfce desktop config moved to sttings-xfce
 
- -- Torsten Wohlfarth <towo@siduction.org>  Tue, 11 Feb 2025 14:10:00 +0100
+ -- Torsten Wohlfarth <towo@siduction.org>  Tue, 11 Feb 2025 14:23:20 +0100
 
 siduction-scripts (2024-12-23.1) unstable; urgency=medium
 
