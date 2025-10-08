@@ -24,6 +24,10 @@ Copyright: 2009      Michael Deelwater <michael.deelwater@googlemail.com>
            2011-2015 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 License: GPL-2.0
 
+Files: onoff
+Copyright: 2025      Axel Konrad <axel.konrad@mailbox.org>
+License: GPL-2.0
+
 License: GPL-2.0
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
