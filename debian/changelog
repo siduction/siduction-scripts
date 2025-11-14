@@ -1,7 +1,12 @@
+siduction-scripts (2025-10-08) unstable; urgency=medium
+
+  [ Axel Konrad ]
+  * add 'onoff' a replacement for user command 'init [0-6]'
+
 siduction-scripts (2025-02-11) unstable; urgency=medium
 
   [ Axel Konrad ]
-  * xfce desktop config moved to sttings-xfce
+  * xfce desktop config moved to settings-xfce
 
  -- Torsten Wohlfarth <towo@siduction.org>  Tue, 11 Feb 2025 14:23:20 +0100
 

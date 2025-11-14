@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+#
+# Name: /usr/sbin/onoff
+#
+# This script makes the functionality removed by systemd 258~rc1-1,
+# init 0 to init 6, available again to the user in a running system.
+
+if [ $# -ne 1 ]; then
+	echo "Only one option is permitted." && exit 1
+fi
+
+case  "${1}" in
+	-h|--help)
+		echo "This script makes the functionality removed by systemd 258~rc1-1,"
+		echo "init 0 to init 6, available again to the user in a running system."
+		echo "Only one digit between 0 and 6 is permitted as an option."
+	;;
+	0)
+		systemctl poweroff
+	;;
+	1)
+		systemctl isolate emergency.target
+	;;
+	2)
+		systemctl isolate rescue.target
+	;;
+	3|4)
+		systemctl isolate multi-user.target
+	;;
+	5)
+		systemctl isolate graphical.target
+	;;
+	6)
+		systemctl reboot
+	;;
+	*)
+		echo "Error: >${1}< is not a valid option" && exit 1
+	;;
+esac
+exit 0

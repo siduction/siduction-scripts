@@ -1,14 +1,16 @@
 addpkg                     usr/sbin/
 burniso	                   usr/bin/
-packages/custom.ex         usr/share/siduction-scripts/packages/
 fw                         usr/share/siduction-scripts/
 fw-data.sh                 usr/share/siduction-scripts/
 fw-detect                  usr/bin/
+live                       usr/sbin/
+onoff                      usr/sbin/
+packages/custom.ex         usr/share/siduction-scripts/packages/
 remove-nonfree             usr/sbin/
 update-resume-partition	   usr/sbin/
-live                       usr/sbin/
 wgetpaste                  usr/bin/
 xfce_icon_add_attrib.sh    usr/share/siduction-scripts/
 
 fix-xkbmap                 usr/bin
 fix-xkbmap.desktop         etc/xdg/autostart
+
