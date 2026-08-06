@@ -3,6 +3,8 @@ siduction-scripts (2025-10-08) unstable; urgency=medium
   [ Axel Konrad ]
   * add 'onoff' a replacement for user command 'init [0-6]'
 
+ -- Torsten Wohlfarth <towo@siduction.org>  Thu, 06 Aug 2026 14:38:14 +0200
+
 siduction-scripts (2025-02-11) unstable; urgency=medium
 
   [ Axel Konrad ]
