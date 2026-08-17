@@ -9,7 +9,6 @@ packages/custom.ex         usr/share/siduction-scripts/packages/
 remove-nonfree             usr/sbin/
 update-resume-partition	   usr/sbin/
 wgetpaste                  usr/bin/
-xfce_icon_add_attrib.sh    usr/share/siduction-scripts/
 
 fix-xkbmap                 usr/bin
 fix-xkbmap.desktop         etc/xdg/autostart
