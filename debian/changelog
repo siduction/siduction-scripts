@@ -1,4 +1,11 @@
-siduction-scripts (2025-10-08) unstable; urgency=medium
+siduction-scripts (2026-11-13) UNRELAEASED; urgency=medium
+
+  [ Axel Konrad ]
+  * onoff: Switch to TTY 1 before executing 'onoff [1-4]'
+
+ -- Axel Konrad <ak-li.siduction.org>  Fri, 13 Nov 2026 11:46:24 +0100
+
+ siduction-scripts (2025-10-08) unstable; urgency=medium
 
   [ Axel Konrad ]
   * add 'onoff' a replacement for user command 'init [0-6]'

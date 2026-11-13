@@ -19,13 +19,13 @@ case  "${1}" in
 		systemctl poweroff
 	;;
 	1)
-		systemctl isolate emergency.target
+		chvt 1 && systemctl isolate emergency.target
 	;;
 	2)
-		systemctl isolate rescue.target
+		chvt 1 && systemctl isolate rescue.target
 	;;
 	3|4)
-		systemctl isolate multi-user.target
+		chvt 1 && systemctl isolate multi-user.target
 	;;
 	5)
 		systemctl isolate graphical.target
